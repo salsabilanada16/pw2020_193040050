@@ -1,0 +1,35 @@
+.container {
+    width: 900px;
+    margin: 30px auto;
+    background-color: #ffffff;
+    position: relative;
+    
+}
+
+body {
+    background-color: white;
+}
+
+
+.row {
+    background-color: white;
+}
+
+.card-image .card-title {
+    font-family: 'Playfair Display', serif;
+}
+
+nav {
+    margin: 0px;
+    height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    font-family: 'Pacifico', cursive;
+}
+
+
+.material-icons, .brand-logo {
+    margin-top: 15px;
+}

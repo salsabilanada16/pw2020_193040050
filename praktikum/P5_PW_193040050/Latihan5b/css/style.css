@@ -1,0 +1,21 @@
+.container {
+    background-color: white;
+    margin: 100px;
+}
+
+body {
+    background-image: url("../assets/img/bg1.jpg");
+}
+
+table {
+    border: 10px black solid;
+    text-align: center;
+}
+
+th {
+    font-family: 'Comic Neue', 'Playfair Display', serif;
+}
+
+tr {
+    font-size: 20px;
+}
