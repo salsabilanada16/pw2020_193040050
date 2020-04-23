@@ -12,7 +12,7 @@ $result = mysqli_query($conn, "SELECT * FROM mahasiswa");
 //  $row = mysqli_fetch_assoc($result); // Array Associative
 //  $row = mysqli_fetch_array($result); // Keduanya
 $rows = [];
-while ($row = mysqli_fetch_array($result)) {
+while ($row = mysqli_fetch_assoc($result)) {
   $rows[] = $row;
 }
 
