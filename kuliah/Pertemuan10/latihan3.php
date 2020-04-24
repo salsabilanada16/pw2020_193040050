@@ -33,17 +33,17 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 <body>
   <!-- Navbar -->
   <nav class="nav-extended">
-    <div class="nav-wrapper grey darken-3 navbar-fixed">
+    <div class="nav-wrapper pink lighten-5 navbar-fixed">
       <div class="container">
-        <a href="#" class="brand-logo center">Daftar Mahasiswa</a>
+        <a href="#" class="brand-logo center black-text">Daftar Mahasiswa</a>
       </div>
     </div>
-    <div class="nav-content grey darken-3 navbar-fixed">
-      <div class="container">
-        <ul class="tabs tabs-transparent">
-          <li class="tab"><a href="tambah.php" style="font-family: 'Slabo 27px', serif;">Tambah Data Mahasiswa</a></li>
-        </ul>
-      </div>
+    <div class="nav-content">
+      <ul class="tabs pink lighten-5">
+        <div class="container">
+          <li class="tab"><a href="tambah.php" class="black-text">Tambah Data Mahasiswa</a></li>
+        </div>
+      </ul>
     </div>
   </nav>
 
@@ -57,7 +57,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
         <div class="col s12 m4">
           <div class="card z-depth-3">
             <div class="card-image">
-              <img src="img/<?= $mhs['gambar']; ?>">
+              <img src="img/<?= $mhs['gambar']; ?>" height="500px">
             </div>
 
             <div class="card-content">
@@ -67,7 +67,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
                 </span>
             </div>
             <div class="card-action">
-              <a class="teal-effect teal darken-4 btn">Add</a>
+              <a href="detail.php?id=<?= $mhs['id']; ?>" class="pink-effect pink lighten-5 btn black-text">Lihat Detail</a>
             </div>
           </div>
         </div>

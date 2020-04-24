@@ -14,22 +14,65 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
 <html lang="en">
 
 <head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Pacifico&display=swap" rel="stylesheet">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detail Mahasiswa</title>
 </head>
 
 <body>
-  <h3>Detail Mahasiswa</h3>
-  <ul>
-    <li><img src="img/<?= $mhs['gambar']; ?>"></li>
-    <li>NRP : <?= $mhs['nrp']; ?></li>
-    <li>Nama : <?= $mhs['nama']; ?></li>
-    <li>Email : <?= $mhs['email']; ?></li>
-    <li>Jurusan : <?= $mhs['jurusan']; ?></li>
-    <li><a href="">Ubah</a> | <a href="">Hapus</a></li>
-    <li><a href="latihan3.php">Kembali ke Daftar Mahasiswa</a></li>
-  </ul>
+  <!-- Navbar -->
+  <section id="home">
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper pink lighten-5">
+          <a href="#home" class="brand-logo center black-text">Detail Mahasiswa</a>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Cards -->
+  <div class="container">
+    <div class="row">
+      <div class="col s12 m4 offset-m4">
+        <div class="card z-depth-3">
+          <div class="card-image">
+            <img src="img/<?= $mhs['gambar']; ?>">
+          </div>
+          <div class="card-content">
+            <span class=" card-title"><?= $mhs['nama']; ?></span>
+            <ul>
+              <li>NRP : <?= $mhs['nrp']; ?></li>
+              <li>Nama : <?= $mhs['nama']; ?></li>
+              <li>Email : <?= $mhs['email']; ?></li>
+              <li>Jurusan : <?= $mhs['jurusan']; ?></li><br>
+              <li style="text-align: center"><a class="pink-effect pink lighten-5 btn black-text">Ubah</a>
+                <a class="pink-effect pink lighten-5 btn black-text">Hapus</a></li><br>
+              <li style="text-align: center"><a href="latihan3.php" class="pink-effect pink lighten-5 btn black-text">Kembali ke Daftar Mahasiswa</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="css/js/materialize.min.js"></script>
 </body>
 
 </html>
