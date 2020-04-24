@@ -19,50 +19,78 @@ if (isset($_POST['tambah'])) {
 <html lang="en">
 
 <head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="../css/style.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Data Mahasiswa</title>
 </head>
 
 <body>
-  <h3>Form Tambah Data Mahasiswa</h3>
-  <form action="" method="POST">
-    <ul>
-      <li>
-        <label>
-          Nama :
-          <input type="text" name="nama" autofocus required>
-        </label>
-      </li>
-      <li>
-        <label>
-          NRP :
-          <input type="text" name="nrp" required>
-        </label>
-      </li>
-      <li>
-        <label>
-          Email :
-          <input type="text" name="email" required>
-        </label>
-      </li>
-      <li>
-        <label>
-          Jurusan :
-          <input type="text" name="jurusan" required>
-        </label>
-      </li>
-      <li>
-        <label>
-          Gambar :
-          <input type="text" name="gambar" required>
-        </label>
-      </li>
-      <li>
-        <button type="submit" name="tambah">Tambah Data</button>
-      </li>
-    </ul>
-  </form>
+  <div class="container">
+    <h3 style="font-family: 'Kaushan Script', cursive; text-align: center;">Form Tambah Data Mahasiswa</h3>
+
+    <!-- Form -->
+    <div class="row">
+      <form action="" method="POST" class="col s6">
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="nama">Nama :</label><br>
+            <input type="text" name="nama" autofocus required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="nrp">NRP :</label><br>
+            <input type="text" name="nrp" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="email">Email :</label><br>
+            <input type="text" name="email" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="jurusan">Jurusan :</label><br>
+            <input type="text" name="Jurusan" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <label for="gambar">Gambar :</label><br>
+            <input type="text" name="gambar" required>
+          </div>
+        </div>
+      </form>
+    </div>
+    <a class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="tambah">Add Data!</a>
+  </div>
+
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="css/js/materialize.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+      M.updateTextFields();
+    });
+  </script>
 </body>
 
 </html>
