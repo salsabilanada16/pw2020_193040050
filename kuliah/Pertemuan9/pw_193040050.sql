@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 03:50 PM
+-- Generation Time: Apr 23, 2020 at 03:01 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -51,7 +51,8 @@ INSERT INTO `mahasiswa` (`id`, `nama`, `nrp`, `email`, `jurusan`, `gambar`) VALU
 (8, 'Abrar Ahmad Abimata', '193010098', 'abrar.abimata@gmail.com', 'Teknik Lingkungan', 'gambar8.jpg'),
 (9, 'Givon Ghaalib Abiwara', '193030067', 'givon05@gmail.com', 'Teknik Planologi', 'gambar9.jpg'),
 (10, 'Hadden Dael Abbiah', '193035789', 'haddael@gmail.com', 'Arsitektur', 'gambar10.jpg'),
-(11, 'Rifqi Zimraan Vinesh', '194070089', 'vineshzimraan@gmail.com', 'Arsitektur', 'gambar11.jpg');
+(11, 'Rifqi Zimraan Vinesh', '194070089', 'vineshzimraan@gmail.com', 'Arsitektur', 'gambar11.jpg'),
+(12, 'Farrel Ravindra Faresta', '193056040', 'ravindresta@gmail.com', 'Desain Interior', 'gambar12.jpg');
 
 --
 -- Indexes for dumped tables
@@ -71,7 +72,7 @@ ALTER TABLE `mahasiswa`
 -- AUTO_INCREMENT for table `mahasiswa`
 --
 ALTER TABLE `mahasiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
