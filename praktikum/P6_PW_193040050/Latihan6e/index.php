@@ -1,8 +1,13 @@
 <?php
 require 'php/functions.php';
 
-$pakaian = query("SELECT * FROM pakaian")
+$pakaian = query("SELECT * FROM pakaian");
 
+
+// Ketika tombol cari diklik
+if (isset($_POST['cari'])) {
+    $pakaian = cari($_POST['keyword']);
+};
 ?>
 
 <!DOCTYPE html>
@@ -38,28 +43,38 @@ $pakaian = query("SELECT * FROM pakaian")
             <nav style="height: 80px;">
                 <div class="nav-wrapper white">
                     <a href="#home" class="brand-logo center"><img src="assets/img/logo/1.png" style="padding-top: 2px;"></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li>
+                            <form action="" method="POST">
+                                <input type="text" name="keyword" autofocus style="color: pink; width: 100px;">
+                                <button type="submit" name="cari" class="pink-effect pink lighten-4" style="margin: auto;">Cari!</button>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </div>
     </header>
     </div>
 
-    <nav class="pink lighten-4" style="height: 70px; padding-left: 650px; padding-top: 10px;">
+    <nav class="pink lighten-4" style="height: 70px; padding-left: 550px; padding-top: 10px;">
         <div class="nav-wrapper">
             <ul class="hide-on-med-and-down">
                 <li><a href="#home">Home</a></li>
                 <li><a href="badges.html">Shop +</a></li>
                 <li><a href="collapsible.html">Category</a></li>
-                <li><a href="mobile.html"></a></li>
+                <li><a href="#wanted">Most Wanted</a></li>
+                <li style="padding-left: 450px;"><a href="php/admin.php">Login Admin</a></li>
             </ul>
         </div>
     </nav>
 
-    <ul class="sidenav" id="mobile-demo">
+    <ul class="sidenav pink lighten-4" id="mobile-demo">
         <li><a href="#home">Home</a></li>
         <li><a href="badges.html">Shop +</a></li>
         <li><a href="collapsible.html">Category</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li><a href="mobile.html">Most Wanted</a></li>
+        <li><a href="php/admin.php">Login Admin</a></li>
     </ul>
     <!-- Akhir Navbar -->
 
@@ -69,79 +84,90 @@ $pakaian = query("SELECT * FROM pakaian")
         <ul class="slides">
             <li>
                 <img src="assets/img/slider/1.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                </div>
             </li>
             <li>
                 <img src="assets/img/slider/2.jpg"> <!-- random image -->
-                <div class="caption right-align">
-                </div>
             </li>
             <li>
-                <img src="assets/img/slider/3.jpg"> <!-- random image -->
-                <div class="caption left-align">
-                </div>
+                <img src="assets/img/slider/3.jpeg"> <!-- random image -->
             </li>
             <li>
                 <img src="assets/img/slider/4.jpg"> <!-- random image -->
-                <div class="caption center-align">
-                </div>
+            </li>
+            <li>
+                <img src="assets/img/slider/5.jpg"> <!-- random image -->
+            </li>
+            <li>
+                <img src="assets/img/slider/6.jpg"> <!-- random image -->
             </li>
         </ul>
     </div>
+    <!-- Akhir Slider -->
 
 
     <!-- Cards -->
     <div class="container">
         <div class="row">
-            <?php foreach ($pakaian as $pkn) : ?>
-                <div class="col s12 m4">
-                    <div class="card z-depth-3">
-                        <div class="card-image">
-                            <img src="assets/img/<?= $pkn["Gambar"]; ?>">
-                            <span class="card-title teal-text text-darken-4"><?= $pkn["Nama"] ?></span>
-                        </div>
+            <?php if (empty($pakaian)) : ?>
+                <tr>
+                    <td>
+                        <h1 style="text-align: center;">Data tidak ditemukan</h1>
+                    </td>
+                    <td><a href="index.php" class="btn pink-effect pink lighten-4" style="margin-left: 400px;">Kembali</a></td>
+                </tr>
+            <?php else : ?>
+                <?php foreach ($pakaian as $pkn) : ?>
+                    <div class="col s12 m4">
+                        <div class="card z-depth-3">
+                            <div class="card-image">
+                                <img src="assets/img/<?= $pkn["Gambar"]; ?>">
+                                <span class="card-title pink-text text-lighten-2"><b><?= $pkn["Nama"] ?></b></span>
+                            </div>
 
-                        <div class="card-content">
-                            <p class="nama">
-                                <a href="php/detail.php?Id=<?= $pkn['Id'] ?>">
-                                    <span class="teal-text text-darken-4">
-                                        <?= $pkn["Kode"] ?><br>
-                                        <?= $pkn["Harga"] ?><br>
-                                        <?= $pkn["Warna"] ?><br>
-                                        <?= $pkn["Ukuran"] ?><br>
-                                        <?= $pkn["Material"] ?><br>
-                                    </span>
-                                </a>
-                            </p>
+                            <div class="card-content">
+                                <p class="nama">
+                                    <a href="php/detail.php?Id=<?= $pkn['Id'] ?>">
+                                        <span class="pink-text text-darken-3">
+                                            <?= $pkn["Kode"] ?><br>
+                                            <?= $pkn["Harga"] ?><br>
+                                            <?= $pkn["Warna"] ?><br>
+                                            <?= $pkn["Ukuran"] ?><br>
+                                            <?= $pkn["Material"] ?><br>
+                                        </span>
+                                    </a>
+                                </p>
+                            </div>
                         </div>
-
                     </div>
-                </div>
-            <?php endforeach; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 
 
-    <!-- Clients -->
-    <div id="clients" class="parallax-container scrollspy">
-        <div class="parallax"><img src="assets/img/slider/1.jpg"></div>
+    <!-- Wanted -->
+    <div id="wanted" class="parallax-container scrollspy">
+        <div class="parallax"><img src="assets/img/parallax/1.png"></div>
 
-        <div class="container clients scrollspy">
-            <h3 class="center light white-text">Our Clients</h3>
-            <div class="row">
-                <div class="col m4 s12 center">
-                    <img src="../img/clients/gojek.png">
+        <div class="wanted scrollspy">
+            <h3 class="center light white-text">Limited Edition!</h3>
+            <div class="row" style="height: 0;">
+                <div class="col m3 s12 center">
+                    <img src="assets/img/parallax/2.jpg">
                 </div>
-                <div class="col m4 s12 center">
-                    <img src="../img/clients/tokopedia.png">
+                <div class="col m3 s12 center">
+                    <img src="assets/img/parallax/3.jpg">
                 </div>
-                <div class="col m4 s12 center">
-                    <img src="../img/clients/traveloka.png">
+                <div class="col m3 s12 center">
+                    <img src="assets/img/parallax/4.jpg">
+                </div>
+                <div class="col m3 s12 center">
+                    <img src="assets/img/parallax/5.jpg">
                 </div>
             </div>
         </div>
     </div>
+    <!-- Akhir Wanted -->
 
 
     <!--JavaScript at end of body for optimized loading-->

@@ -1,19 +1,30 @@
 <?php
 require 'functions.php';
 
-// Cek apakah
-if (isset($_POST['tambah'])) {
-    if (tambah($_POST) > 0) {
+// Jika tidak ada id di URL
+if (!isset($_GET['Id'])) {
+    header("Location: admin.php");
+    exit;
+}
+
+// Ambil id dari URL
+$Id = $_GET['Id'];
+
+// Query pakaian berdasarkan id
+$pkn = query("SELECT * FROM pakaian WHERE Id = $Id");
+
+if (isset($_POST['ubah'])) {
+    if (ubah($_POST) > 0) {
         echo "<script>
-                    alert('Data Berhasil Ditambahkan!');
-                    document.location.href = 'admin.php';
-                </script>";
+                        alert('Data Berhasil Diubah!');
+                        document.location.href = 'admin.php';
+                    </script>";
     } else {
         echo "<script>
-                    alert('Data Gagal Ditambahkan!');
-                    document.location.href = 'admin.php';
-                </script>";
-    }
+                        alert('Data Gagal Diubah!');
+                        document.location.href = 'admin.php';
+                    </script>";
+    };
 }
 ?>
 
@@ -43,83 +54,54 @@ if (isset($_POST['tambah'])) {
     <title>Tambah Data</title>
 </head>
 
+
 <body>
-    <!-- Navbar -->
-    <div id="#home"></div>
-    <header class="open">
-        <div class="navbar-fixed">
-            <nav style="height: 80px;">
-                <div class="nav-wrapper white">
-                    <a href="#home" class="brand-logo center"><img src="../assets/img/logo/1.png" style="padding-top: 2px;"></a>
-                </div>
-            </nav>
-        </div>
-    </header>
-    </div>
-
-    <nav class="pink lighten-4" style="height: 100px; padding-top: 10px;">
-        <div class="nav-wrapper">
-            <ul class="hide-on-med-and-down">
-                <h3 style="font-family: 'Kaushan Script', cursive; text-align: center;">Form Tambah Data Pakaian</h3>
-            </ul>
-        </div>
-    </nav>
-
-
-    <!-- Form -->
     <div class="container">
-        <div class="row">
-            <form action="" method="post" class="col s6">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Gambar">Gambar :</label><br>
-                        <input type="text" name="Gambar" id="Gambar" autofocus required>
-                    </div>
-                </div>
+        <h3 style="font-family: 'Kaushan Script', cursive; text-align: center;">Form Ubah Data Pakaian</h3>
+
+        <!-- Form -->
+        <div class=" row">
+            <form action="" method="POST" class="col s6">
+                <input type="hidden" name="Id" id="Id" value="<?= $pkn['Id']; ?>">
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Kode">Kode :</label><br>
-                        <input type="text" name="Kode" id="Kode" required>
+                        <input type="text" name="Kode" id="Kode" autofocus required value="<?= $pkn['Kode']; ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Nama">Nama :</label><br>
-                        <input type="text" name="Nama" id="Nama" required>
+                        <input type="text" name="Nama" id="Nama" required value="<?= $pkn['Nama']; ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Harga">Harga :</label><br>
-                        <input type="text" name="Harga" id="Harga" required>
+                        <input type="text" name="Harga" id="Harga" required value="<?= $pkn['Harga']; ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Warna">Warna :</label><br>
-                        <input type="text" name="Warna" id="Warna" required>
+                        <input type="text" name="Warna" id="Warna" required value="<?= $pkn['Warna']; ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Ukuran">Ukuran :</label><br>
-                        <input type="text" name="Ukuran" id="Ukuran" required>
+                        <input type="text" name="Ukuran" id="Ukuran" required value="<?= $pkn['Ukuran']; ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
                         <label for="Material">Material :</label><br>
-                        <input type="text" name="Material" id="Material" required>
+                        <input type="text" name="Material" id="Material" required value="<?= $pkn['Material']; ?>">
                     </div>
                 </div>
         </div>
-
-
-        <button type="submit" name="tambah" class="btn pink-effect pink lighten-4 z-depth-2">
-            Add Data!</button>
-        <a href="admin.php" type="submit" class="btn pink-effect pink lighten-4 z-depth-2" style="margin-left: 40px;">
-            Back
-        </a>
+        <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="ubah">Change Data!</button>
+        <a href="../index.php" class="grey darken-3 z-depth-2 btn">Back</a>
         </form>
     </div>
 

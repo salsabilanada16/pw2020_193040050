@@ -1,12 +1,13 @@
 <?php
-// menghubungkan dengan file php lainnya
-require 'functions.php';
+require 'php/functions.php';
+
+$pakaian = query("SELECT * FROM pakaian");
 
 
 // Ketika tombol cari diklik
 if (isset($_POST['cari'])) {
     $pakaian = cari($_POST['keyword']);
-};
+}
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +18,7 @@ if (isset($_POST['cari'])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +32,7 @@ if (isset($_POST['cari'])) {
     <meta charset="UTF-8">
     <title>Radz Project</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body id="home" class="scrollspy">
@@ -41,15 +42,12 @@ if (isset($_POST['cari'])) {
         <div class="navbar-fixed">
             <nav style="height: 80px;">
                 <div class="nav-wrapper white">
-                    <a href="#home" class="brand-logo center"><img src="../assets/img/logo/1.png" style="padding-top: 2px;"></a>
+                    <a href="#home" class="brand-logo center"><img src="assets/img/logo/1.png" style="padding-top: 2px;"></a>
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="tambah.php">
-                                <div class="add"><i class="material-icons teal-text text-darken-4">add</i></div>
-                            </a></li>
                         <li>
                             <form action="" method="POST">
                                 <input type="text" name="keyword" autofocus style="color: pink; width: 100px;">
-                                <button type="submit" name="cari" class="pink-effect pink lighten-4 pink-text text-darken-3">Cari!</button>
+                                <button type="submit" name="cari" class="pink-effect pink lighten-4" style="margin: auto;">Search</button>
                             </form>
                         </li>
                     </ul>
@@ -66,15 +64,17 @@ if (isset($_POST['cari'])) {
                 <li><a href="badges.html">Shop +</a></li>
                 <li><a href="collapsible.html">Category</a></li>
                 <li><a href="#wanted">Most Wanted</a></li>
+                <li style="padding-left: 450px;"><a href="php/admin.php">Login Admin</a></li>
             </ul>
         </div>
     </nav>
 
-    <ul class="sidenav" id="mobile-demo">
+    <ul class="sidenav pink lighten-4" id="mobile-demo">
         <li><a href="#home">Home</a></li>
         <li><a href="badges.html">Shop +</a></li>
         <li><a href="collapsible.html">Category</a></li>
-        <li><a href="#wanted">Most Wanted</a></li>
+        <li><a href="mobile.html">Most Wanted</a></li>
+        <li><a href="php/admin.php">Login Admin</a></li>
     </ul>
     <!-- Akhir Navbar -->
 
@@ -83,22 +83,22 @@ if (isset($_POST['cari'])) {
     <div class="slider">
         <ul class="slides">
             <li>
-                <img src="../assets/img/slider/1.jpg"> <!-- random image -->
+                <img src="assets/img/slider/1.jpg"> <!-- random image -->
             </li>
             <li>
-                <img src="../assets/img/slider/2.jpg"> <!-- random image -->
+                <img src="assets/img/slider/2.jpg"> <!-- random image -->
             </li>
             <li>
-                <img src="../assets/img/slider/3.jpeg"> <!-- random image -->
+                <img src="assets/img/slider/3.jpeg"> <!-- random image -->
             </li>
             <li>
-                <img src="../assets/img/slider/4.jpg"> <!-- random image -->
+                <img src="assets/img/slider/4.jpg"> <!-- random image -->
             </li>
             <li>
-                <img src="../assets/img/slider/5.jpg"> <!-- random image -->
+                <img src="assets/img/slider/5.jpg"> <!-- random image -->
             </li>
             <li>
-                <img src="../assets/img/slider/6.jpg"> <!-- random image -->
+                <img src="assets/img/slider/6.jpg"> <!-- random image -->
             </li>
         </ul>
     </div>
@@ -113,15 +113,15 @@ if (isset($_POST['cari'])) {
                     <td>
                         <h1 style="text-align: center;">Data tidak ditemukan</h1>
                     </td>
-                    <td><a href="admin.php" class="btn pink-effect pink lighten-4" style="margin-left: 400px;">Kembali</a></td>
+                    <td><a href="index.php" class="btn pink-effect pink lighten-4" style="margin-left: 400px;">Kembali</a></td>
                 </tr>
             <?php else : ?>
                 <?php foreach ($pakaian as $pkn) : ?>
-                    <div class=" col s12 m4">
+                    <div class="col s12 m4">
                         <div class="card z-depth-3">
                             <div class="card-image">
-                                <img src="../assets/img/<?= $pkn["Gambar"]; ?>">
-                                <span class="card-title pink-text text-darken-3"><?= $pkn["Nama"] ?></span>
+                                <img src="assets/img/<?= $pkn["Gambar"]; ?>">
+                                <span class="card-title pink-text text-lighten-2"><b><?= $pkn["Nama"] ?></b></span>
                             </div>
 
                             <div class="card-content">
@@ -137,39 +137,32 @@ if (isset($_POST['cari'])) {
                                     </a>
                                 </p>
                             </div>
-
-                            <div class="card-action">
-                                <a href="ubah.php?Id=<?= $pkn['Id']; ?>"><button class="btn pink-effect pink lighten-4" type="submit" name="action">Ubah</button></a>
-                                <a href="hapus.php?Id=<? $pkn['Id'] ?>" onclick="return confirm('Hapus Data??')" class="btn pink-effect pink lighten-4" class="teal-effect teal darken-4 btn">Hapus</a>
-                            </div>
-
                         </div>
                     </div>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
     </div>
-    <!-- Akhir Cards -->
 
 
     <!-- Wanted -->
     <div id="wanted" class="parallax-container scrollspy">
-        <div class="parallax"><img src="../assets/img/Parallax/1.png"></div>
+        <div class="parallax"><img src="assets/img/parallax/1.png"></div>
 
         <div class="wanted scrollspy">
             <h3 class="center light white-text">Limited Edition!</h3>
             <div class="row" style="height: 0;">
                 <div class="col m3 s12 center">
-                    <img src="../assets/img/Parallax/2.jpg">
+                    <img src="assets/img/parallax/2.jpg">
                 </div>
                 <div class="col m3 s12 center">
-                    <img src="../assets/img/Parallax/3.jpg">
+                    <img src="assets/img/parallax/3.jpg">
                 </div>
                 <div class="col m3 s12 center">
-                    <img src="../assets/img/Parallax/4.jpg">
+                    <img src="assets/img/parallax/4.jpg">
                 </div>
                 <div class="col m3 s12 center">
-                    <img src="../assets/img/Parallax/5.jpg">
+                    <img src="assets/img/parallax/5.jpg">
                 </div>
             </div>
         </div>
@@ -177,9 +170,8 @@ if (isset($_POST['cari'])) {
     <!-- Akhir Wanted -->
 
 
-
     <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="../css/js/materialize.min.js"></script>
+    <script type="text/javascript" src="css/js/materialize.min.js"></script>
     <!-- Carousel -->
     <script>
         const sideNav = document.querySelectorAll('.sidenav');

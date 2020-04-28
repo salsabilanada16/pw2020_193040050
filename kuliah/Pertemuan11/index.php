@@ -81,7 +81,7 @@ if (isset($_POST['cari'])) {
 
             <div class="card-content">
               <span class="card-title teal-text text-darken-4">
-                <?= $mhs['nama'] ?><br>
+                <?= $mhs['nama']; ?><br>
               </span>
             </div>
             <div class="card-action">

@@ -2,11 +2,12 @@
 // menghubungkan dengan file php lainnya
 require 'functions.php';
 
+$pakaian = query("SELECT * FROM pakaian");
 
 // Ketika tombol cari diklik
 if (isset($_POST['cari'])) {
     $pakaian = cari($_POST['keyword']);
-};
+}
 ?>
 
 <!DOCTYPE html>
@@ -44,12 +45,12 @@ if (isset($_POST['cari'])) {
                     <a href="#home" class="brand-logo center"><img src="../assets/img/logo/1.png" style="padding-top: 2px;"></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="tambah.php">
-                                <div class="add"><i class="material-icons teal-text text-darken-4">add</i></div>
+                                <div class="add"><i class="material-icons pink-text text-darken-3">add</i></div>
                             </a></li>
                         <li>
                             <form action="" method="POST">
                                 <input type="text" name="keyword" autofocus style="color: pink; width: 100px;">
-                                <button type="submit" name="cari" class="pink-effect pink lighten-4 pink-text text-darken-3">Cari!</button>
+                                <button type="submit" name="cari" class="pink-effect pink lighten-4 pink-text text-darken-3">Search</button>
                             </form>
                         </li>
                     </ul>
