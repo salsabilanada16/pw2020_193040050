@@ -9,8 +9,11 @@ if (isset($_POST['tambah'])) {
             document.location.href = 'index.php';
           </script>";
   } else {
-    echo "Data Gagal Ditambahkan!";
-  };
+    echo "<script>
+            alert('Data Gagal Ditambahkan!');
+            document.location.href = 'index.php';
+          </script>";
+  }
 }
 
 ?>

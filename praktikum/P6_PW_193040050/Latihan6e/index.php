@@ -25,33 +25,70 @@ $pakaian = query("SELECT * FROM pakaian")
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Radz Project</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body id="home" class="scrollspy">
     <!-- Navbar -->
-
-    <div class="navbar-fixed">
-        <div class="container">
-            <nav>
+    <div id="#home"></div>
+    <header class="open">
+        <div class="navbar-fixed">
+            <nav style="height: 80px;">
                 <div class="nav-wrapper white">
-                    <a href="#!" class="brand-logo center teal-text text-darken-4">Radz Project</a>
-                    <ul id="nav-mobile" class="left hide-on-med-and-down">
-                        <li><a href="sass.html"><i class="material-icons teal-text text-darken-4">menu</i></a></li>
-                    </ul>
-
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href=""><i class="material-icons teal-text text-darken-4">search</i></a></li>
-                        <li><a href=""><i class="material-icons teal-text text-darken-4">shopping_cart</i></a></li>
-                        <li><a href="php/tambah.php"><i class="material-icons teal-text text-darken-4">create</i></a></li>
-                    </ul>
+                    <a href="#home" class="brand-logo center"><img src="assets/img/logo/1.png" style="padding-top: 2px;"></a>
                 </div>
             </nav>
         </div>
+    </header>
     </div>
 
+    <nav class="pink lighten-4" style="height: 70px; padding-left: 650px; padding-top: 10px;">
+        <div class="nav-wrapper">
+            <ul class="hide-on-med-and-down">
+                <li><a href="#home">Home</a></li>
+                <li><a href="badges.html">Shop +</a></li>
+                <li><a href="collapsible.html">Category</a></li>
+                <li><a href="mobile.html"></a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="#home">Home</a></li>
+        <li><a href="badges.html">Shop +</a></li>
+        <li><a href="collapsible.html">Category</a></li>
+        <li><a href="mobile.html">Mobile</a></li>
+    </ul>
+    <!-- Akhir Navbar -->
+
+
+    <!-- slider -->
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="assets/img/slider/1.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                </div>
+            </li>
+            <li>
+                <img src="assets/img/slider/2.jpg"> <!-- random image -->
+                <div class="caption right-align">
+                </div>
+            </li>
+            <li>
+                <img src="assets/img/slider/3.jpg"> <!-- random image -->
+                <div class="caption left-align">
+                </div>
+            </li>
+            <li>
+                <img src="assets/img/slider/4.jpg"> <!-- random image -->
+                <div class="caption center-align">
+                </div>
+            </li>
+        </ul>
+    </div>
 
 
     <!-- Cards -->
@@ -86,9 +123,62 @@ $pakaian = query("SELECT * FROM pakaian")
     </div>
 
 
+    <!-- Clients -->
+    <div id="clients" class="parallax-container scrollspy">
+        <div class="parallax"><img src="assets/img/slider/1.jpg"></div>
+
+        <div class="container clients scrollspy">
+            <h3 class="center light white-text">Our Clients</h3>
+            <div class="row">
+                <div class="col m4 s12 center">
+                    <img src="../img/clients/gojek.png">
+                </div>
+                <div class="col m4 s12 center">
+                    <img src="../img/clients/tokopedia.png">
+                </div>
+                <div class="col m4 s12 center">
+                    <img src="../img/clients/traveloka.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script></script>
+    <script type="text/javascript" src="css/js/materialize.min.js"></script>
+    <!-- Carousel -->
+    <script>
+        const sideNav = document.querySelectorAll('.sidenav');
+        M.Sidenav.init(sideNav);
+
+        const slider = document.querySelectorAll('.slider');
+        M.Slider.init(slider, {
+            indicators: false,
+            height: 500,
+            transition: 600,
+            interval: 3000
+        });
+
+        const parallax = document.querySelectorAll('.parallax');
+        M.Parallax.init(parallax);
+
+        const materialbox = document.querySelectorAll('.materialboxed');
+        M.Materialbox.init(materialbox);
+
+        const scroll = document.querySelectorAll('.scrollspy');
+        M.ScrollSpy.init(scroll, {
+            scrollOffset: 50
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.sidenav').seidenav
+        })
+
+        $(document).ready(function() {
+            $('.parallax').parallax();
+        });
+    </script>
 </body>
 
 </html>

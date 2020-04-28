@@ -8,8 +8,6 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 // Ketika tombol cari diklik
 if (isset($_POST['cari'])) {
   $mahasiswa = cari($_POST['keyword']);
-} else {
-  $mahasiswa = query("SELECT * FROM mahasiswa");
 }
 
 ?>
@@ -41,33 +39,37 @@ if (isset($_POST['cari'])) {
 <body>
   <!-- Navbar -->
   <nav class="nav-extended">
-    <div class="nav-wrapper pink lighten-5 navbar-fixed">
+    <div class="nav-wrapper black navbar-fixed" style="height: 85px;">
       <div class="container">
-        <a href="#" class="brand-logo center black-text">Daftar Mahasiswa</a>
+        <a href="#" class="brand-logo center white-text" style="padding-top: 10px; font-size: 50px;">Daftar Mahasiswa</a>
       </div>
-    </div>
-    <div class="nav-content">
-      <ul class="tabs pink lighten-5">
-        <div class="container">
-          <li class="tab"><a href="tambah.php" class="black-text">Tambah Data Mahasiswa</a></li>
-        </div>
-      </ul>
     </div>
   </nav>
   <br>
-
-  <!-- Search -->
   <div class="container">
+    <a href="tambah.php" class="black btn white-text btn" style="border-radius: 20%;">Tambah Data Mahasiswa</a>
     <form action="" method="POST">
-      <input type="text" name="keyword" placeholder="Masukkan keyword pencarian.." autocomplete="off" autofocus>
-      <button type="submit" name="cari">Cari!</button>
+      <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus>
+      <button type="submit" name="cari" class="btn-small">Cari!</button>
     </form>
   </div>
+  <br>
+
 
 
 
 
   <!-- Cards -->
+  <!-- Data tidak ditemukan -->
+  <?php if (empty($mahasiswa)) : ?>
+    <tr>
+      <td>
+        <h1 style="text-align: center;">Data tidak ditemukan</h1>
+      </td>
+      <td><a href="index.php" class="black btn white-text btn" style="margin-left: 700px;">Kembali</a></td>
+    </tr>
+  <?php endif; ?>
+
   <div class="container">
     <div class="row">
       <?php foreach ($mahasiswa as $mhs) : ?>
@@ -78,13 +80,12 @@ if (isset($_POST['cari'])) {
             </div>
 
             <div class="card-content">
-              <p class="nama">
-                <span class="teal-text text-darken-4">
-                  <?= $mhs['nama'] ?><br>
-                </span>
+              <span class="card-title teal-text text-darken-4">
+                <?= $mhs['nama'] ?><br>
+              </span>
             </div>
             <div class="card-action">
-              <a href="detail.php?id=<?= $mhs['id']; ?>" class="pink-effect pink lighten-5 btn black-text">Lihat Detail</a>
+              <a href="detail.php?id=<?= $mhs['id']; ?>" class="black btn white-text">Lihat Detail</a>
             </div>
           </div>
         </div>
@@ -92,38 +93,8 @@ if (isset($_POST['cari'])) {
     </div>
   </div>
 
-  <!-- Data tidak ditemukan -->
-  <?php if (empty($mahasiswa)) : ?>
-    <tr>
-      <td>
-        <h1>Data tidak ditemukan</h1>
-      </td>
-    </tr>
-  <?php else : ?>
-    <div class="container">
-      <div class="row">
-        <?php foreach ($mahasiswa as $mhs) : ?>
-          <div class="col s12 m4">
-            <div class="card z-depth-3">
-              <div class="card-image">
-                <img src="img/<?= $mhs['gambar']; ?>" height="500px">
-              </div>
 
-              <div class="card-content">
-                <p class="nama">
-                  <span class="teal-text text-darken-4">
-                    <?= $mhs['nama'] ?><br>
-                  </span>
-              </div>
-              <div class="card-action">
-                <a href="detail.php?id=<?= $mhs['id']; ?>" class="pink-effect pink lighten-5 btn black-text">Lihat Detail</a>
-              </div>
-            </div>
-          </div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  <?php endif; ?>
+
 
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="css/js/materialize.min.js"></script>

@@ -55,7 +55,7 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
             <img src="img/<?= $mhs['gambar']; ?>">
           </div>
           <div class="card-content">
-            <span class=" card-title"><?= $mhs['nama']; ?></span>
+            <span class=" card-title" style="text-align: center;"><?= $mhs['nama']; ?></span>
             <ul>
               <li>NRP : <?= $mhs['nrp']; ?></li>
               <li>Nama : <?= $mhs['nama']; ?></li>

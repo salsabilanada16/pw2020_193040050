@@ -7,10 +7,15 @@ function koneksi()
     return $conn;
 }
 
-function query($sql)
+function query($query)
 {
     $conn = koneksi();
-    $result = mysqli_query($conn, "$sql");
+    $result = mysqli_query($conn, $query);
+
+    // Jika hasilnya hanya 1 data
+    if (mysqli_num_rows($result) == 1) {
+        return mysqli_fetch_assoc($result);
+    }
 
     $rows = [];
     while ($row = mysqli_fetch_assoc($result)) {
@@ -35,7 +40,8 @@ function tambah($data)
 
     $query = "INSERT INTO pakaian
                         VALUES
-                        ('','$Gambar', '$Kode', '$Nama', '$Harga', '$Warna', '$Ukuran', '$Material')";
+                        (' ','$Gambar', '$Kode', '$Nama', '$Harga', '$Warna', '$Ukuran', '$Material')
+                        ";
 
     mysqli_query($conn, $query);
 
@@ -47,8 +53,7 @@ function tambah($data)
 function hapus($Id)
 {
     $conn = koneksi();
-    mysqli_query($conn, "DELETE FROM pakaian WHERE Id = $Id");
-
+    mysqli_query($conn, "DELETE FROM pakaian WHERE Id = $Id") or die(mysqli_error($conn));
     return mysqli_affected_rows($conn);
 }
 
@@ -56,7 +61,7 @@ function hapus($Id)
 // UBAH
 function ubah($data)
 {
-    global $conn;
+    $conn = koneksi();
 
     $Id = $data['Id'];
     $Gambar = htmlspecialchars($data['Gambar']);
@@ -67,16 +72,16 @@ function ubah($data)
     $Ukuran = htmlspecialchars($data['Ukuran']);
     $Material = htmlspecialchars($data['Material']);
 
-    $queryubah = "UPDATE pakaian
-                        SET
-                        Gambar = '$Gambar',
-                        Kode = '$Kode',
-                        Nama = '$Nama',
-                        Harga = '$Harga',
-                        Warna = '$Warna',
-                        Ukuran = '$Ukuran',
-                        Material = '$Material' ";
-    mysqli_query($conn, $queryubah);
+    $queryubah = "UPDATE pakaian SET
+                    Gambar = '$Gambar',
+                    Kode = '$Kode',
+                    Nama = '$Nama',
+                    Harga = '$Harga',
+                    Warna = '$Warna',
+                    Ukuran = '$Ukuran',
+                    Material = '$Material'
+                    WHERE Id = $Id";
+    mysqli_query($conn, $queryubah) or die(mysqli_error($conn));
 
     return mysqli_affected_rows($conn);
 }

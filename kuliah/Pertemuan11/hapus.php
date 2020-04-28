@@ -17,5 +17,8 @@ if (hapus($id) > 0) {
             document.location.href = 'index.php';
         </script>";
 } else {
-  echo "Data Gagal Dihapus!";
+  echo "<script>
+            alert('Data Gagal Dihapus!');
+            document.location.href = 'index.php';
+        </script>";
 }

@@ -1,8 +1,17 @@
 <?php
 require 'functions.php';
 
+// Jika tidak ada id di URL
+if (!isset($_GET['Id'])) {
+    header("Location: admin.php");
+    exit;
+}
+
+// Ambil id dari URL
 $Id = $_GET['Id'];
-$pkn = query("SELECT * FROM pakaian WHERE Id = $Id")[0];
+
+// Query pakaian berdasarkan id
+$pkn = query("SELECT * FROM pakaian WHERE Id = $Id");
 
 if (isset($_POST['ubah'])) {
     if (ubah($_POST) > 0) {
@@ -15,7 +24,7 @@ if (isset($_POST['ubah'])) {
                         alert('Data Gagal Diubah!');
                         document.location.href = 'admin.php';
                     </script>";
-    }
+    };
 }
 ?>
 

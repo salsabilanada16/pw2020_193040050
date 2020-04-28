@@ -10,6 +10,7 @@ function koneksi()
 function query($query)
 {
   $conn = koneksi();
+
   $result = mysqli_query($conn, $query);
 
   // Jika hasilnya hanya 1 data
@@ -49,6 +50,7 @@ function hapus($id)
 {
   $conn = koneksi();
   mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
+
   return mysqli_affected_rows($conn);
 }
 
@@ -70,7 +72,7 @@ function ubah($data)
               email = '$email',
               jurusan = '$jurusan',
               gambar = '$gambar'
-            WHERE id = $id";
+            WHERE id = '$id' ";
   mysqli_query($conn, $query) or die(mysqli_error($conn));
   return mysqli_affected_rows($conn);
 }
@@ -81,11 +83,12 @@ function cari($keyword)
   $conn = koneksi();
 
   $query = "SELECT * FROM mahasiswa
-              WHERE nama LIKE '%$keyword%' OR
-                    nrp LIKE '%$keyword%' OR
-                    email LIKE '%$keyword%' OR
-                    jurusan LIKE '%$keyword%'
-                    ";
+              WHERE 
+              nama LIKE '%$keyword%' OR
+              nrp LIKE '%$keyword%' OR
+              email LIKE '%$keyword%' OR
+              jurusan LIKE '%$keyword%'
+              ";
 
   $result = mysqli_query($conn, $query);
 
