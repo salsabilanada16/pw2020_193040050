@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2020 at 01:49 PM
+-- Generation Time: Apr 29, 2020 at 09:07 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -63,7 +63,13 @@ INSERT INTO `pakaian` (`Id`, `Gambar`, `Kode`, `Nama`, `Harga`, `Warna`, `Ukuran
 (18, 'gambar18.jpg', 'A18', 'HOLLISTER\r\nLarge Scale Logo Pullover Hoodie', 'Rp 939.000', 'Navy, Pink, Grey, Red', 'XS, S, M, L', '70% Cotton, 30% Polyester'),
 (19, 'gambar19.jpg', 'A19', 'PAPER DOLLS\r\nMono Colourblock Dress', 'Rp 1.329.000', 'Mond Print Black', '8, 10, 12, 14, 16', '89% Polyester, 11% Elastane'),
 (20, 'gambar20.jpg', 'A20', 'CLOSET\r\nA-line Wrap Dress\r\n', 'Rp 1.649.000', 'Red', '8, 10, 12, 14, 16', '90% Polyester, 10% Elastane'),
-(21, 'gambar21.jpg', 'A21', 'SPORT B.\r\nReversible Down Jacket', 'Rp 8.489.000', 'Black', '1, 2, 3, 4', '100% Nylon');
+(21, 'gambar21.jpg', 'A21', 'SPORT B.\r\nReversible Down Jacket', 'Rp 8.489.000', 'Black', '1, 2, 3, 4', '100% Nylon'),
+(22, 'gambar22.jpg', 'A22', 'Kickers\r\nLadies 3555T', 'Rp 1.549.000', 'Tan, White', '36, 37, 38, 39, 40', 'Leather'),
+(23, 'gambar23.jpg', 'A23', 'Birkenstock\r\nGizeh Sandal', 'Rp 1.299.000', 'Pearl White', '35 - 41', 'Leather'),
+(24, 'gambar24.jpg', 'A24', 'Palladium\r\nPampa Lite+ Smiley Fest Wp+', 'Rp 1.899.000', 'White', '4, 4.5, 5.5 - 7', 'Canvas, Sintetis, Rubber'),
+(25, 'gambar25.jpg', 'A25', 'Birkenstock\r\nMayari Patent Sandals', 'Rp 1.299.000', 'Patent White, Patent Black', '35 - 41', 'Genuine cow suede, Birko-Flor'),
+(26, 'gambar26.jpg', 'A26', 'Vans\r\nAuthentic', 'Rp 1.349.000', '(Cherries) Black', '36 - 40.5', 'Canvas, Sintesis, Rubber'),
+(27, 'gambar27.jpg', 'A26', 'Melissa\r\nUltragirl Basic Ad', 'Rp 759.900', 'Pink/Beige, Black', '5, 6, 7, 8, 9', 'Melflex');
 
 --
 -- Indexes for dumped tables
@@ -83,7 +89,7 @@ ALTER TABLE `pakaian`
 -- AUTO_INCREMENT for table `pakaian`
 --
 ALTER TABLE `pakaian`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
