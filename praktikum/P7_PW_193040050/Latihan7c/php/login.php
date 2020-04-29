@@ -60,68 +60,114 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
 
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radz Project - Login</title>
 
-  <!-- Meta tag Keywords -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="UTF-8" />
-  <meta name="keywords" content="Trendz Login Form Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-  <script>
-    addEventListener("load", function() {
-      setTimeout(hideURLbar, 0);
-    }, false);
-
-    function hideURLbar() {
-      window.scrollTo(0, 1);
-    }
-  </script>
-  <!-- //Meta tag Keywords -->
-  <!--/Style-CSS -->
-  <link rel="stylesheet" href="../css/style.css" type="text/css" media="all" />
-  <!--//Style-CSS -->
 </head>
 
-<body>
-  <!-- /login-section -->
+<body style="background-image:url(../assets/img/Bg/3.jpg)">
+  <!-- Title -->
+  <div class="container" style="text-align: center;">
+    <img src="../assets/img/logo/1.png" alt="" style="margin: 20px 0 30px;">
+    <h2 style="font-family: 'Lobster';">WELCOME!</h2><br>
+    <h5>Wanna join? Please Login first. Thanks</h5>
+  </div>
+  <!-- Title -->
 
-  <section class="w3l-forms-23">
-    <div class="forms23-block-hny">
-      <div class="wrapper">
-        <h1>Trendz Login Form</h1>
-        <!-- if logo is image enable this   
-					<a class="logo" href="index.html">
-					  <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-					</a> 
-				-->
-        <div class="d-grid forms23-grids">
-          <div class="form23">
-            <div class="main-bg">
-              <h6 class="sec-one">John Doe</h6>
-              <div class="speci-login first-look">
-                <img src="../assets/img/login/user.png" alt="" class="img-responsive">
+  <!-- Log In -->
+  <section id="login" class="grey lighten-3 scrollspy" style="margin-top: 40px;">
+    <div class="container">
+
+      <div class="row" style="padding: 10px 0 10px;">
+        <div class="col m2 s12">
+
+        </div>
+
+        <div class="col m8 s12">
+          <form action="" method="POST">
+            <div class="card-panel">
+              <h3 style="text-align: center;">Log In</h3>
+              <?php if (isset($error)) : ?>
+                <p style="color: red; padding: 10px 0 10px;">Username atau Password Salah</p>
+              <?php endif; ?>
+              <div class="input-field">
+                <input type="text" name="username" id="username" required class="validate" autofocus>
+                <label for="username">Username :</label>
+              </div>
+              <div class="input-field">
+                <input type="password" name="password" id="password" required class="validate">
+                <label for="password">Password :</label>
+              </div>
+
+              <div class="switch remember" style="padding: 15px 0 25px;">
+                <label>
+                  Ops
+                  <input type="checkbox" name="remember">
+                  <span class="lever"></span>
+                  Remember Me
+                </label>
+              </div>
+
+              <button type="submit" name="submit" class="btn pink lighten-3" style="margin-left: 260px;">Get Started</button>
+
+              <div class="registrasi" style="padding-top: 20px">
+                <p style="text-align: center;">Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
               </div>
             </div>
-            <div class="bottom-content">
-              <form action="#" method="post">
-                <input type="email" name="email" class="input-form" placeholder="Your Email" required="required" />
-                <input type="password" name="password" class="input-form" placeholder="Your Password" required="required" />
-                <button type="submit" class="loginhny-btn btn">Login</button>
-              </form>
-              <p>Not a member yet? <a href="#">Join Now!</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="w3l-copy-right text-center">
-          <p>© 2020 Trendz Login Form. All rights reserved | Design by
-            <a href="http://w3layouts.com/" target="_blank">W3layouts</a></p>
+          </form>
         </div>
       </div>
     </div>
   </section>
-  <!-- //login-section -->
+  <!-- Akhir Log In -->
+
+
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="../css/js/materialize.min.js"></script>
+  <script>
+    const sideNav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sideNav);
+
+    const slider = document.querySelectorAll('.slider');
+    M.Slider.init(slider, {
+      indicators: false,
+      height: 500,
+      transition: 600,
+      interval: 3000
+    });
+
+    const parallax = document.querySelectorAll('.parallax');
+    M.Parallax.init(parallax);
+
+    const materialbox = document.querySelectorAll('.materialboxed');
+    M.Materialbox.init(materialbox);
+
+    const scroll = document.querySelectorAll('.scrollspy');
+    M.ScrollSpy.init(scroll, {
+      scrollOffset: 50
+    });
+  </script>
 </body>
 
 </html>

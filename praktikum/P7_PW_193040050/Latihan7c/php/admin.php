@@ -73,26 +73,26 @@ if (isset($_POST['cari'])) {
     <nav class="pink lighten-4" style="height: 70px; padding-left: 500px; padding-top: 10px;">
         <div class="nav-wrapper">
             <ul class="hide-on-med-and-down">
-                <li><a href="#home" style="font-size: 20px;">Home</a></li>
-                <li><a href="#shop" style="font-size: 20px;">Shop +</a></li>
-                <li><a href="" style="font-size: 20px;">Category</a></li>
-                <li><a href="#wanted" style="font-size: 20px;">Most Wanted</a></li>
-                <li><a href="#newarrival" style="font-size: 20px;">New Arrival</a></li>
+                <li><a href="#home" style="font-size: 20px; font-family: 'Pacifico', cursive;">Home</a></li>
+                <li><a href="#shop" style="font-size: 20px; font-family: 'Pacifico', cursive;">Shop +</a></li>
+                <li><a href="" style="font-size: 20px; font-family: 'Pacifico', cursive;">Category</a></li>
+                <li><a href="#wanted" style="font-size: 20px; font-family: 'Pacifico', cursive;">Most Wanted</a></li>
+                <li><a href="#newarrival" style="font-size: 20px; font-family: 'Pacifico', cursive;">New Arrival</a></li>
                 <div class="logout">
-                    <li style="padding-left: 280px;"><a href=" logout.php" style="font-size: 20px;">Logout</a></li>
+                    <li style="padding-left: 280px;"><a href=" logout.php" style="font-size: 20px; font-family: 'Pacifico', cursive;">Logout</a></li>
                 </div>
             </ul>
         </div>
     </nav>
 
     <ul class="sidenav" id="mobile-demo">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#shop">Shop +</a></li>
-        <li><a href="">Category</a></li>
-        <li><a href="#wanted">Most Wanted</a></li>
-        <li><a href="#newarrival">New Arrival</a></li>
+        <li><a href="#home" style="font-family: 'Pacifico', cursive;">Home</a></li>
+        <li><a href="#shop" style="font-family: 'Pacifico', cursive;">Shop +</a></li>
+        <li><a href="" style="font-family: 'Pacifico', cursive;">Category</a></li>
+        <li><a href="#wanted" style="font-family: 'Pacifico', cursive;">Most Wanted</a></li>
+        <li><a href="#newarrival" style="font-family: 'Pacifico', cursive;">New Arrival</a></li>
         <div class="logout">
-            <li><a href="logout.php">Logout</a></li>
+            <li><a href="logout.php" style="font-family: 'Pacifico', cursive;">Logout</a></li>
         </div>
     </ul>
     <!-- Akhir Navbar -->
@@ -207,10 +207,10 @@ if (isset($_POST['cari'])) {
     </section>
 
     <!-- New Arrival -->
-    <section id="newarrival" class="newarrival grey lighten-3 scrollspy" style="margin-top: 30px;">
-        <h3 class="light center grey-text text-darken-3" style="padding-top: 20px; font-family: 'Pacifico', cursive;">New Arrival</h3>
+    <section id="newarrival" class="newarrival transparent lighten-3 scrollspy" style="margin-top: 30px;">
+        <h3 class="light center grey-text text-darken-3" style="font-family: 'Pacifico', cursive;">New Arrival</h3>
         <div class="container">
-            <div class="row grey lighten-3">
+            <div class="row transparent" style="padding-top: 20px;">
                 <div class="col m4 s12">
                     <div class="card-panel center">
                         <img src="../assets/img/Trending/gambar1.jpg" class="responsive-img materialboxed">
@@ -233,9 +233,9 @@ if (isset($_POST['cari'])) {
 
 
     <!-- Footer -->
-    <footer class="page-footer pink lighten-3 white-text" style="margin-top: -20px;">
+    <footer class="page-footer pink lighten-3 white-text">
         <div class="footer-copyright center">
-            <p class="flow-text" style="margin-left: 650px;">© 2020 Radz Project.</p>
+            <p class="flow-text white-text" style="margin-left: 630px; font-size: 25px;">© 2020 Radz Project.</p>
         </div>
     </footer>
     <!-- Akhir Footer -->

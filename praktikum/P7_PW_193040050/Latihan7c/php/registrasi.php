@@ -22,73 +22,72 @@ if (isset($_POST["register"])) {
 <html>
 
 <head>
-  <title>Animated Form Switching with jQuery</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="description" content="Expand, contract, animate forms with jQuery wihtout leaving the page" />
-  <meta name="keywords" content="expand, form, css3, jquery, animate, width, height, adapt, unobtrusive javascript" />
-  <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" type="text/css" href="../css/style.css" />
-  <script src="../css/js/cufon-yui.js" type="text/javascript"></script>
-  <script src="../css/js/ChunkFive_400.font.js" type="text/javascript"></script>
-  <script type="text/javascript">
-    Cufon.replace('h1', {
-      textShadow: '1px 1px #fff'
-    });
-    Cufon.replace('h2', {
-      textShadow: '1px 1px #fff'
-    });
-    Cufon.replace('h3', {
-      textShadow: '1px 1px #000'
-    });
-    Cufon.replace('.back');
-  </script>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radz Project - Sign Up</title>
 </head>
 
-<body>
-  <div class="wrapper">
-    <h1>Radz Project - Register</h1>
-    <div class="content">
-      <div id="form_wrapper" class="form_wrapper">
-        <form action="" method="POST" class="register active">
-          <h3>Register</h3>
-          <div class="column">
-            <div>
-              <label for="username">Username :</label>
-              <input type="text" name="username" />
-              <span class="error">This is an error</span>
-            </div>
-            <div>
-              <label for="password">Password :</label>
-              <input type="text" name="password" />
-              <span class="error">This is an error</span>
-            </div>
-          </div>
-          <div class="bottom">
-            <div class="remember">
-              <input type="checkbox" />
-              <span>Send me updates</span>
-            </div>
-            <input type="submit" value="Register" />
-            <a href="index.html" rel="login" class="linkform">You have an account already? Log in here</a>
-            <div class="clear"></div>
-          </div>
-        </form>
-        <div class="bottom">
-          <div class="remember">
-            <input type="checkbox" />
-            <span>Send me updates</span>
-          </div>
-          <button type="submit" name="register">
-            <p>You have an account already? <a href="login.php" rel="login" class="linkform">Log in here
-              </a></p>
-          </button>
-          <div class="clear"></div>
-        </div>
-        </form>
-      </div>
-      <div class="clear"></div>
-    </div>
+<body style="background-image:url(../assets/img/Bg/2.jpg)">
+  <!-- Title -->
+  <div class="container" style="text-align: center;">
+    <img src="../assets/img/logo/1.png" alt="" style="margin: 20px 0 30px;">
+    <h2 style="font-family: 'Lobster';">WELCOME!</h2><br>
+    <h5>Wanna be a Member? Let's Sign Up first</h5>
   </div>
+  <!-- Title -->
+
+  <!-- Log In -->
+  <section id="login" class="grey lighten-3 scrollspy" style="margin-top: 50px;">
+    <div class="container">
+      <h3 class="light grey-text text-darken-3"></h3>
+      <div class="row" style="padding: 20px 0 20px;">
+        <div class="col m2 s12">
+
+        </div>
+
+        <div class="col m8 s12">
+          <form action="" method="POST">
+            <div class="card-panel">
+              <h3 style="text-align: center;">Sign Up</h3>
+
+              <div class="input-field">
+                <input type="text" name="username" id="username" required class="validate" autofocus>
+                <label for="username">Username :</label>
+              </div>
+              <div class="input-field">
+                <input type="password" name="password" id="password" required class="validate">
+                <label for="password">Password :</label>
+              </div>
+
+              <button type="submit" name="register" class="btn pink lighten-3" style="margin-left: 290px;">Join!</button>
+
+              <div class="registrasi" style="padding-top: 20px">
+                <p style="text-align: center;">You have an account already? <a href="login.php">Log in here</a></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Akhir Log In -->
 
 
   <!-- The JavaScript -->

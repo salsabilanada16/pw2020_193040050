@@ -124,7 +124,7 @@ if (isset($_POST['cari'])) {
                         <div class="col s12 m4">
                             <div class="card z-depth-3">
                                 <div class="card-image">
-                                    <img src="assets/img/<?= $pkn["Gambar"]; ?>">
+                                    <img src="assets/img/<?= $pkn["Gambar"]; ?>" class="responsive-img materialboxed">
                                     <span class="card-title pink-text text-lighten-2"><b><?= $pkn["Nama"] ?></b></span>
                                 </div>
 
@@ -216,7 +216,7 @@ if (isset($_POST['cari'])) {
     <!-- Footer -->
     <footer class="page-footer pink lighten-3">
         <div class="footer-copyright">
-            <p class="white-text" style="margin-left: 630px; font-size: 25px;">© 2020 Radz Project.</p>
+            <p class="flow-text white-text" style="margin-left: 630px; font-size: 25px;">© 2020 Radz Project.</p>
         </div>
     </footer>
     <!-- Akhir Footer -->
