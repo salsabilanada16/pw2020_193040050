@@ -41,9 +41,8 @@ if (isset($_POST['registrasi'])) {
   <body style="background-image:url(assets/img/Bg/3.jpg)">
     <!-- Title -->
     <div class="container" style="text-align: center;">
-      <img src="../assets/img/logo/1.png" alt="" style="margin: 20px 0 30px;">
-      <h2 style="font-family: 'Lobster';">WELCOME!</h2><br>
-      <h5>Wanna be a Member? Let's Sign Up first</h5>
+      <h2 style="font-family: 'Lobster';" class="white-text">WELCOME!</h2><br>
+      <h5 class="white-text">Wanna be a Member? Let's Sign Up first</h5>
     </div>
     <!-- Title -->
 

@@ -41,13 +41,13 @@ if (isset($_POST['login'])) {
   <body style="background-image:url(assets/img/Bg/3.jpg)">
     <!-- Title -->
     <div class="container" style="text-align: center;">
-      <h2 style="font-family: 'Lobster';">WELCOME!</h2><br>
-      <h5>Wanna join? Please Login first. Thanks</h5>
+      <h2 style="font-family: 'Lobster';" class="white-text">WELCOME!</h2><br>
+      <h5 class="white-text">Wanna join? Please Login first. Thanks</h5>
     </div>
     <!-- Title -->
 
     <!-- Log In -->
-    <section id="login" class="grey lighten-3 scrollspy" style="margin-top: 40px;">
+    <section id=" login" class="grey lighten-3 scrollspy" style="margin-top: 40px;">
       <div class="container">
 
         <div class="row" style="padding: 10px 0 10px;">
