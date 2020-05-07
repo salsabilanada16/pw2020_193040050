@@ -1,0 +1,14 @@
+body {
+    background-image: url(../assets/img/Bg/1.jpg);
+}
+
+#title h3 {
+    font-family: 'Kaushan Script', cursive;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.card-panel {
+  width: 800px;
+  margin-left: -50px;
+}
