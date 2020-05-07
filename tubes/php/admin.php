@@ -42,24 +42,24 @@ if (isset($_POST['cari'])) {
     <meta charset="UTF-8">
     <title>Radz Project</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/admin.css">
 </head>
 
-<body id="home" class="scrollspy" style="background-image: url('../assets/img/Bg/3.jpg');">
+<body id="home" class="scrollspy">
     <!-- Navbar -->
     <div id="#home"></div>
     <header class="open">
         <div class="navbar-fixed">
-            <nav style="height: 80px;">
+            <nav>
                 <div class="nav-wrapper white">
-                    <a href="#home" class="brand-logo center"><img src="../assets/img/logo/1.png" style="padding-top: 2px;"></a>
+                    <a href="#home" class="brand-logo center"><img src="../assets/img/logo/1.png"></a>
                     <ul class="right hide-on-med-and-down">
                         <li><a href="tambah.php">
                                 <div class="add"><i class="material-icons pink-text text-darken-3">add</i></div>
                             </a></li>
                         <li>
                             <form action="" method="POST">
-                                <input type="text" name="keyword" autofocus style="color: pink; width: 100px;">
+                                <input type="text" name="keyword" autofocus>
                                 <button type="submit" name="cari" class="pink-effect pink lighten-4 pink-text text-darken-3">Search</button>
                             </form>
                         </li>
@@ -70,31 +70,33 @@ if (isset($_POST['cari'])) {
     </header>
     </div>
 
-    <nav class="pink lighten-4" style="height: 70px; padding-left: 500px; padding-top: 10px;">
-        <div class="nav-wrapper">
-            <ul class="hide-on-med-and-down">
-                <li><a href="#home" style="font-size: 20px; font-family: 'Pacifico', cursive;">Home</a></li>
-                <li><a href="#shop" style="font-size: 20px; font-family: 'Pacifico', cursive;">Shop +</a></li>
-                <li><a href="" style="font-size: 20px; font-family: 'Pacifico', cursive;">Category</a></li>
-                <li><a href="#wanted" style="font-size: 20px; font-family: 'Pacifico', cursive;">Most Wanted</a></li>
-                <li><a href="#newarrival" style="font-size: 20px; font-family: 'Pacifico', cursive;">New Arrival</a></li>
-                <div class="logout">
-                    <li style="padding-left: 280px;"><a href=" logout.php" style="font-size: 20px; font-family: 'Pacifico', cursive;">Logout</a></li>
-                </div>
-            </ul>
-        </div>
-    </nav>
+    <section id="nav">
+        <nav class="pink lighten-4">
+            <div class="nav-wrapper">
+                <ul class="hide-on-med-and-down">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop +</a></li>
+                    <li><a href="">Category</a></li>
+                    <li><a href="#wanted">Most Wanted</a></li>
+                    <li><a href="#newarrival">New Arrival</a></li>
+                    <div class="logout">
+                        <li><a href=" logout.php">Logout</a></li>
+                    </div>
+                </ul>
+            </div>
+        </nav>
 
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="#home" style="font-family: 'Pacifico', cursive;">Home</a></li>
-        <li><a href="#shop" style="font-family: 'Pacifico', cursive;">Shop +</a></li>
-        <li><a href="" style="font-family: 'Pacifico', cursive;">Category</a></li>
-        <li><a href="#wanted" style="font-family: 'Pacifico', cursive;">Most Wanted</a></li>
-        <li><a href="#newarrival" style="font-family: 'Pacifico', cursive;">New Arrival</a></li>
-        <div class="logout">
-            <li><a href="logout.php" style="font-family: 'Pacifico', cursive;">Logout</a></li>
-        </div>
-    </ul>
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#shop">Shop +</a></li>
+            <li><a href="">Category</a></li>
+            <li><a href="#wanted">Most Wanted</a></li>
+            <li><a href="#newarrival">New Arrival</a></li>
+            <div class="logout">
+                <li><a href="logout.php">Logout</a></li>
+            </div>
+        </ul>
+    </section>
     <!-- Akhir Navbar -->
 
 
@@ -127,13 +129,13 @@ if (isset($_POST['cari'])) {
     <!-- Cards -->
     <section id="shop">
         <div class="container">
-            <div class="row" style="margin-top: 70px;">
+            <div class="row">
                 <?php if (empty($pakaian)) : ?>
                     <tr>
                         <td>
-                            <h1 style="text-align: center;">Data tidak ditemukan</h1>
+                            <h1>Data tidak ditemukan</h1>
                         </td>
-                        <td><a href="admin.php" class="btn pink-effect pink lighten-4" style="margin-left: 400px;">Kembali</a></td>
+                        <td><a href="admin.php" class="btn pink-effect pink lighten-4 kembali">Kembali</a></td>
                     </tr>
                 <?php else : ?>
                     <?php foreach ($pakaian as $pkn) : ?>
@@ -172,17 +174,17 @@ if (isset($_POST['cari'])) {
     </section>
     <!-- Akhir Cards -->
 
-    <section id="line" class="newarrival white scrollspy" style="margin-top: 60px; margin-bottom: -70px; height: 40px;">
-        <h3 class="light center grey-text text-darken-3" style="padding-top: 20px;"></h3>
+    <section id="line1" class="newarrival white scrollspy">
+        <h3 class="light center grey-text text-darken-3"></h3>
     </section>
 
     <!-- Wanted -->
-    <div id="wanted" class="parallax-container scrollspy" style="height: 350px; margin-top: 70px;">
+    <div id="wanted" class="parallax-container scrollspy">
         <div class="parallax"><img src="../assets/img/Parallax/6.jpg"></div>
 
         <div class="wanted scrollspy">
-            <h3 class="center light black-text" style="font-family: 'Lobster Two', cursive;">Limited Edition!</h3>
-            <div class="row" style="height: 0;">
+            <h3 class="center light black-text">Limited Edition!</h3>
+            <div class="row">
                 <div class="container">
                     <div class="col m3 s12 center">
                         <img src="../assets/img/Parallax/2.jpg" class="responsive-img materialboxed">
@@ -202,15 +204,15 @@ if (isset($_POST['cari'])) {
     </div>
     <!-- Akhir Wanted -->
 
-    <section id="line" class="newarrival white scrollspy" style="margin-top: -30px; margin-bottom: 50px; height: 40px;">
-        <h3 class="light center grey-text text-darken-3" style="padding-top: 20px;"></h3>
+    <section id="line2" class="newarrival white scrollspy">
+        <h3 class="light center grey-text text-darken-3"></h3>
     </section>
 
     <!-- New Arrival -->
-    <section id="newarrival" class="newarrival transparent lighten-3 scrollspy" style="margin-top: 30px;">
-        <h3 class="light center grey-text text-darken-3" style="font-family: 'Pacifico', cursive;">New Arrival</h3>
+    <section id="newarrival" class="newarrival transparent lighten-3 scrollspy">
+        <h3 class="light center grey-text text-darken-3">New Arrival</h3>
         <div class="container">
-            <div class="row transparent" style="padding-top: 20px;">
+            <div class="row transparent">
                 <div class="col m4 s12">
                     <div class="card-panel center">
                         <img src="../assets/img/Trending/gambar1.jpg" class="responsive-img materialboxed">
@@ -233,11 +235,13 @@ if (isset($_POST['cari'])) {
 
 
     <!-- Footer -->
-    <footer class="page-footer pink lighten-3 white-text">
-        <div class="footer-copyright center">
-            <p class="flow-text white-text" style="margin-left: 630px; font-size: 25px;">© 2020 Radz Project.</p>
-        </div>
-    </footer>
+    <section id="footer">
+        <footer class="page-footer pink lighten-3 white-text">
+            <div class="footer-copyright center">
+                <p class="flow-text white-text">© 2020 Radz Project.</p>
+            </div>
+        </footer>
+    </section>
     <!-- Akhir Footer -->
 
     <!--JavaScript at end of body for optimized loading-->

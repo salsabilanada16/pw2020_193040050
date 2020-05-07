@@ -58,7 +58,6 @@ if (isset($_POST['ubah'])) {
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/style.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -73,6 +72,20 @@ if (isset($_POST['ubah'])) {
             font-family: 'Kaushan Script', cursive;
             text-align: center;
             margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        #ubah .btn {
+            margin-bottom: 30px;
+            margin-left: 20px;
+        }
+
+        #ubah {
+            margin-bottom: 40px;
+        }
+
+        #ubah .row {
+            margin-left: 20px;
         }
     </style>
 </head>
@@ -131,8 +144,10 @@ if (isset($_POST['ubah'])) {
             <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="ubah">Change Data!</button>
             <a href="../index.php" class="grey darken-3 z-depth-2 btn">Back</a>
             </form>
+
+        </section>
     </div>
-    </section>
+    <!-- Akhir Form -->
 
 
     <!--JavaScript at end of body for optimized loading-->

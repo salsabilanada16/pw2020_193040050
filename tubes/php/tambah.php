@@ -53,87 +53,127 @@ if (isset($_POST['tambah'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data</title>
+
+    <style>
+        body {
+            background-image: url(../assets/img/Bg/1.jpg);
+        }
+
+        #home img {
+            padding-top: 10px;
+            margin-bottom: -10px;
+            margin-left: 670px;
+        }
+
+        #home h3 {
+            font-family: 'Kaushan Script', cursive;
+            text-align: center;
+        }
+
+        #home .navbar-fixed nav {
+            height: 80px;
+        }
+
+        #home .container nav {
+            height: 100px;
+            padding-top: 10px;
+        }
+
+        #tambah {
+            margin-bottom: 70px;
+        }
+
+        #tambah .row {
+            margin-left: 20px;
+        }
+
+        #tambah .btn {
+            margin-left: 320px;
+            margin-bottom: 30px;
+        }
+
+        #tambah input {
+            width: 750px;
+        }
+
+        #title h3 {
+            text-align: center;
+            font-family: 'Kaushan Script', cursive;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Navbar -->
-    <div id="#home"></div>
-    <header class="open">
-        <div class="navbar-fixed">
-            <nav style="height: 80px;">
-                <div class="nav-wrapper white">
-                    <a href="#home" class="brand-logo center"><img src="../assets/img/logo/1.png" style="padding-top: 2px;"></a>
-                </div>
-            </nav>
-        </div>
-    </header>
-    </div>
+    <section id="home">
+        <a href="#home" class="brand-logo center"><img src="../assets/img/logo/1.png"></a>
+    </section>
+    <!-- Akhir Navbar -->
 
-    <nav class="pink lighten-4" style="height: 100px; padding-top: 10px;">
-        <div class="nav-wrapper">
-            <ul class="hide-on-med-and-down">
-                <h3 style="font-family: 'Kaushan Script', cursive; text-align: center;">Form Tambah Data Pakaian</h3>
-            </ul>
-        </div>
-    </nav>
-
+    <!-- Title -->
+    <section id="title">
+        <h3>Form Ubah Data Pakaian</h3>
+    </section>
+    <!-- Akhir Title -->
 
     <!-- Form -->
     <div class="container">
-        <div class="row">
-            <form action="" method="post" class="col s6">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Gambar">Gambar :</label><br>
-                        <input type="text" name="Gambar" id="Gambar" autofocus required>
+        <section id="tambah">
+            <div class="row">
+                <form action="" method="POST" class="col s6">
+                    <input type="hidden" name="Id" id="Id" value="<?= $pkn['Id']; ?>">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="Gambar">Gambar :</label><br>
+                            <input type="text" name="Gambar" id="Gambar" autofocus required>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Kode">Kode :</label><br>
-                        <input type="text" name="Kode" id="Kode" required>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="Kode">Kode :</label><br>
+                            <input type="text" name="Kode" id="Kode" autofocus required>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Nama">Nama :</label><br>
-                        <input type="text" name="Nama" id="Nama" required>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="Nama">Nama :</label><br>
+                            <input type="text" name="Nama" id="Nama" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Harga">Harga :</label><br>
-                        <input type="text" name="Harga" id="Harga" required>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="Harga">Harga :</label><br>
+                            <input type="text" name="Harga" id="Harga" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Warna">Warna :</label><br>
-                        <input type="text" name="Warna" id="Warna" required>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="Warna">Warna :</label><br>
+                            <input type="text" name="Warna" id="Warna" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Ukuran">Ukuran :</label><br>
-                        <input type="text" name="Ukuran" id="Ukuran" required>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="Ukuran">Ukuran :</label><br>
+                            <input type="text" name="Ukuran" id="Ukuran" required>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <label for="Material">Material :</label><br>
-                        <input type="text" name="Material" id="Material" required>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <label for="Material">Material :</label><br>
+                            <input type="text" name="Material" id="Material" required>
+                        </div>
                     </div>
-                </div>
-        </div>
-
-
-        <button type="submit" name="tambah" class="btn pink-effect pink lighten-4 z-depth-2">
-            Add Data!</button>
-        <a href="admin.php" type="submit" class="btn pink-effect pink lighten-4 z-depth-2" style="margin-left: 40px;">
-            Back
-        </a>
-        </form>
+            </div>
+            <button type="submit" name="tambah" class="btn pink-effect pink lighten-4 z-depth-2">
+                Add Data!</button>
+            <a href="admin.php" type="submit" class="btn pink-effect pink lighten-4 z-depth-2" style="margin-left: 40px;">
+                Back
+            </a>
+            </form>
+        </section>
     </div>
+    <!-- Akhir Form -->
 
 
     <!--JavaScript at end of body for optimized loading-->

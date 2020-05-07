@@ -1,0 +1,97 @@
+body {
+  background-image: url(../assets/img/Bg/3.jpg);
+}
+
+#home nav {
+  height: 80px;
+}
+
+#home img {
+  padding-top: 2px;
+}
+
+#home input {
+  color: pink;
+  width: 100px;
+}
+
+#nav nav {
+  height: 70px;
+  padding-left: 500px;
+  padding-top: 10px;
+}
+
+#nav a {
+  font-size: 20px;
+  font-family: 'Pacifico', cursive;
+}
+
+#nav .logout li {
+  padding-left: 280px;
+}
+
+#mobile-demo a {
+  font-family: 'Pacifico', cursive;
+}
+
+#shop .row {
+  margin-top: 70px;
+}
+
+#shop h1 {
+  text-align: center;
+}
+
+#shop .kembali {
+  margin-left: 400px;
+}
+
+#line1 {
+  margin-top: 60px;
+  margin-bottom: -70px;
+  height: 40px;
+}
+
+#line1 h3 {
+  padding-top: 20px;
+}
+
+#wanted {
+  height: 350px;
+  margin-top: 70px;
+}
+
+#wanted h3 {
+  font-family: 'Lobster Two', cursive;
+}
+
+#wanted .row {
+  height: 0;
+}
+
+#line2 {
+  margin-top: -30px;
+  margin-bottom: 50px;
+  height: 40px;
+}
+
+#line2 h3 {
+  padding-top: 20px;
+}
+
+#newarrival {
+  margin-top: 30px;
+}
+
+#newarrival h3 {
+  font-family: 'Pacifico', cursive;
+}
+
+#newarrival .row {
+  padding-top: 20px;
+}
+
+#footer p {
+  margin-left: 630px;
+  font-size: 25px;
+}
