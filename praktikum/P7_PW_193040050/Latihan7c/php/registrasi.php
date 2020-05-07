@@ -37,27 +37,29 @@ if (isset($_POST["register"])) {
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/registrasi.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radz Project - Sign Up</title>
 </head>
 
-<body style="background-image:url(../assets/img/Bg/2.jpg)">
+<body>
   <!-- Title -->
-  <div class="container" style="text-align: center;">
-    <img src="../assets/img/logo/1.png" alt="" style="margin: 20px 0 30px;">
-    <h2 style="font-family: 'Lobster';">WELCOME!</h2><br>
-    <h5>Wanna be a Member? Let's Sign Up first</h5>
-  </div>
+  <section id="title">
+    <div class="container">
+      <img src="../assets/img/logo/1.png" alt="">
+      <h2>WELCOME!</h2><br>
+      <h5>ADMIN</h5>
+    </div>
+  </section>
   <!-- Title -->
 
   <!-- Log In -->
-  <section id="login" class="grey lighten-3 scrollspy" style="margin-top: 50px;">
+  <section id="login" class="transparent scrollspy">
     <div class="container">
       <h3 class="light grey-text text-darken-3"></h3>
-      <div class="row" style="padding: 20px 0 20px;">
+      <div class="row">
         <div class="col m2 s12">
 
         </div>
@@ -65,7 +67,7 @@ if (isset($_POST["register"])) {
         <div class="col m8 s12">
           <form action="" method="POST">
             <div class="card-panel">
-              <h3 style="text-align: center;">Sign Up</h3>
+              <h3>Sign Up</h3>
 
               <div class="input-field">
                 <input type="text" name="username" id="username" required class="validate" autofocus>
@@ -76,10 +78,10 @@ if (isset($_POST["register"])) {
                 <label for="password">Password :</label>
               </div>
 
-              <button type="submit" name="register" class="btn pink lighten-3" style="margin-left: 290px;">Join!</button>
+              <button type="submit" name="register" class="btn pink lighten-3">Join!</button>
 
-              <div class="registrasi" style="padding-top: 20px">
-                <p style="text-align: center;">You have an account already? <a href="login.php">Log in here</a></p>
+              <div class="registrasi">
+                <p>You have an account already? <a href="login.php">Log in here</a></p>
               </div>
             </div>
           </form>

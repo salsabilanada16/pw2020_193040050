@@ -59,7 +59,7 @@ if (isset($_POST['login'])) {
             <form action="" method="POST">
               <div class="card-panel">
                 <h3 style="text-align: center;">Log In</h3>
-                <?php if (isset($login['error'])) : ?>
+                <?php if (isset($error)) : ?>
                   <p style="color: red; padding: 10px 0 10px;">Username atau Password Salah</p>
                 <?php endif; ?>
                 <div class="input-field">

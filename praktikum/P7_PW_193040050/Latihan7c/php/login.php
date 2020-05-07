@@ -78,38 +78,40 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/login.css">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Radz Project - Login</title>
 
+
 </head>
 
-<body style="background-image:url(../assets/img/Bg/3.jpg)">
+<body>
   <!-- Title -->
-  <div class="container" style="text-align: center;">
-    <img src="../assets/img/logo/1.png" alt="" style="margin: 20px 0 30px;">
-    <h2 style="font-family: 'Lobster';">WELCOME!</h2><br>
-    <h5>Wanna join? Please Login first. Thanks</h5>
-  </div>
+  <section id="title">
+    <div class="container">
+      <img src="../assets/img/logo/1.png" alt="">
+      <h2>WELCOME!</h2><br>
+      <h5>ADMIN</h5>
+    </div>
+  </section>
   <!-- Title -->
 
   <!-- Log In -->
-  <section id="login" class="grey lighten-3 scrollspy" style="margin-top: 40px;">
+  <section id="login" class="transparent scrollspy">
     <div class="container">
 
-      <div class="row" style="padding: 10px 0 10px;">
+      <div class="row">
         <div class="col m2 s12">
-
         </div>
 
         <div class="col m8 s12">
           <form action="" method="POST">
             <div class="card-panel">
-              <h3 style="text-align: center;">Log In</h3>
+              <h3>Log In</h3>
               <?php if (isset($error)) : ?>
-                <p style="color: red; padding: 10px 0 10px;">Username atau Password Salah</p>
+                <p>Username atau Password Salah</p>
               <?php endif; ?>
               <div class="input-field">
                 <input type="text" name="username" id="username" required class="validate" autofocus>
@@ -120,7 +122,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
                 <label for="password">Password :</label>
               </div>
 
-              <div class="switch remember" style="padding: 15px 0 25px;">
+              <div class="switch remember">
                 <label>
                   Ops
                   <input type="checkbox" name="remember">
@@ -129,10 +131,10 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
                 </label>
               </div>
 
-              <button type="submit" name="submit" class="btn pink lighten-3" style="margin-left: 260px;">Get Started</button>
+              <button type="submit" name="submit" class="btn pink lighten-3">Get Started</button>
 
-              <div class="registrasi" style="padding-top: 20px">
-                <p style="text-align: center;">Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
+              <div class="registrasi">
+                <p>Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
               </div>
             </div>
           </form>

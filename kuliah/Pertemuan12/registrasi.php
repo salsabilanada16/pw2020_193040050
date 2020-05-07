@@ -69,7 +69,7 @@ if (isset($_POST['registrasi'])) {
                   <label for="password">Password :</label>
                 </div>
                 <div class="input-field">
-                  <input type="password" name="password2" id="password" required class="validate">
+                  <input type="password" name="password2" id="password2" required>
                   <label for="password">Konfirmasi Password :</label>
                 </div>
 
