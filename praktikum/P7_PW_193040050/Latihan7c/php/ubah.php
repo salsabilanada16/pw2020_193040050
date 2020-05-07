@@ -58,23 +58,13 @@ if (isset($_POST['ubah'])) {
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/ubah.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Data</title>
 
-    <style>
-        body {
-            background-image: url(../assets/img/Bg/1.jpg);
-        }
 
-        #title h3 {
-            font-family: 'Kaushan Script', cursive;
-            text-align: center;
-            margin-top: 30px;
-        }
-    </style>
 </head>
 
 
@@ -89,60 +79,56 @@ if (isset($_POST['ubah'])) {
         <!-- Form -->
         <section id="ubah">
             <div class="row">
-                <form action="" method="POST" class="col s6">
-                    <input type="hidden" name="Id" id="Id" value="<?= $pkn['Id']; ?>">
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <label for="Kode">Kode :</label><br>
-                            <input type="text" name="Kode" id="Kode" autofocus required value="<?= $pkn['Kode']; ?>">
+                <div class="col m2 s12">
+
+                </div>
+
+                <div class="col m8 s12">
+                    <form action="" method="POST">
+                        <div class="card-panel">
+
+                            <div class="input-field">
+                                <label for="Kode">Kode :</label><br>
+                                <input type="text" name="Kode" id="Kode" autofocus required value="<?= $pkn['Kode']; ?>">
+                            </div>
+                            <div class="input-field">
+                                <label for="Nama">Nama :</label><br>
+                                <input type="text" name="Nama" id="Nama" required value="<?= $pkn['Nama']; ?>">
+                            </div>
+                            <div class="input-field">
+                                <label for="Harga">Harga :</label><br>
+                                <input type="text" name="Harga" id="Harga" required value="<?= $pkn['Harga']; ?>">
+                            </div>
+                            <div class="input-field">
+                                <label for="Warna">Warna :</label><br>
+                                <input type="text" name="Warna" id="Warna" required value="<?= $pkn['Warna']; ?>">
+                            </div>
+                            <div class="input-field">
+                                <label for="Ukuran">Ukuran :</label><br>
+                                <input type="text" name="Ukuran" id="Ukuran" required value="<?= $pkn['Ukuran']; ?>">
+                            </div>
+                            <div class="input-field">
+                                <label for="Material">Material :</label><br>
+                                <input type="text" name="Material" id="Material" required value="<?= $pkn['Material']; ?>">
+                            </div>
+
+                            <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="ubah">Change Data!</button>
+                            <a href="../index.php" class="grey darken-3 z-depth-2 btn">Back</a>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <label for="Nama">Nama :</label><br>
-                            <input type="text" name="Nama" id="Nama" required value="<?= $pkn['Nama']; ?>">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <label for="Harga">Harga :</label><br>
-                            <input type="text" name="Harga" id="Harga" required value="<?= $pkn['Harga']; ?>">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <label for="Warna">Warna :</label><br>
-                            <input type="text" name="Warna" id="Warna" required value="<?= $pkn['Warna']; ?>">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <label for="Ukuran">Ukuran :</label><br>
-                            <input type="text" name="Ukuran" id="Ukuran" required value="<?= $pkn['Ukuran']; ?>">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <label for="Material">Material :</label><br>
-                            <input type="text" name="Material" id="Material" required value="<?= $pkn['Material']; ?>">
-                        </div>
-                    </div>
+                    </form>
+                </div>
             </div>
-            <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="ubah">Change Data!</button>
-            <a href="../index.php" class="grey darken-3 z-depth-2 btn">Back</a>
-            </form>
-    </div>
-    </section>
+        </section>
 
 
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="../js/materialize.min.js"></script>
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="../js/materialize.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            M.updateTextFields();
-        });
-    </script>
+        <script>
+            $(document).ready(function() {
+                M.updateTextFields();
+            });
+        </script>
 </body>
 
 </html>
