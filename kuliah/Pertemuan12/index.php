@@ -7,7 +7,7 @@ if (!isset($_SESSION['login'])) {
   exit;
 }
 
-require 'functions.php';
+require 'php/functions.php';
 
 // Tampung ke variable Mahasiswa
 $mahasiswa = query("SELECT * FROM mahasiswa");
@@ -65,8 +65,8 @@ if (isset($_POST['cari'])) {
     <div class="container">
       <a href="php/tambah.php" class="black btn white-text btn">Tambah Data Mahasiswa</a>
       <form action="" method="POST">
-        <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus>
-        <button type="submit" name="cari" class="btn-small">Cari!</button>
+        <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus style="margin-top: 20px;">
+        <button type="submit" name="cari" class="btn-small" style="margin-top: 10px;">Cari!</button>
       </form>
     </div>
     <br>
@@ -92,16 +92,16 @@ if (isset($_POST['cari'])) {
           <div class="col s12 m4">
             <div class="card z-depth-3">
               <div class="card-image">
-                <img src="img/<?= $mhs['gambar']; ?>" height="500px">
+                <img src="assets/img/<?= $mhs['gambar']; ?>" height="500px">
               </div>
 
               <div class="card-content">
-                <span class="card-title teal-text text-darken-4">
+                <span class="card-title teal-text text-darken-4" style="text-align: center;">
                   <?= $mhs['nama']; ?><br>
                 </span>
               </div>
               <div class="card-action">
-                <a href="php/detail.php?id=<?= $mhs['id']; ?>" class="black btn white-text">Lihat Detail</a>
+                <a href="php/detail.php?id=<?= $mhs['id']; ?>" class="black btn white-text" style="margin-left: 80px;">Lihat Detail</a>
               </div>
             </div>
           </div>

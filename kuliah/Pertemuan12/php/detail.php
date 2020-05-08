@@ -61,7 +61,7 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
         <div class="col s12 m4 offset-m4">
           <div class="card z-depth-3">
             <div class="card-image">
-              <img src="img/<?= $mhs['gambar']; ?>">
+              <img src="../assets/img/<?= $mhs['gambar']; ?>">
             </div>
             <div class="card-content">
               <span class="card-title"><?= $mhs['nama']; ?></span>
@@ -72,7 +72,7 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
                 <li>Jurusan : <?= $mhs['jurusan']; ?></li><br>
                 <li class="li"><a href="ubah.php?id=<?= $mhs['id']; ?>" class="pink-effect pink lighten-5 btn black-text">Ubah</a>
                   <a href="hapus.php?id=<?= $mhs['id']; ?>" onclick="return confirm('Apakah anda yakin?');" class="pink-effect pink lighten-5 btn black-text">Hapus</a></li><br>
-                <li class="li"><a href="index.php" class="pink-effect pink lighten-5 btn black-text">Kembali ke Daftar Mahasiswa</a></li>
+                <li class="li"><a href="../index.php" class="pink-effect pink lighten-5 btn black-text">Kembali ke Daftar Mahasiswa</a></li>
               </ul>
             </div>
           </div>
