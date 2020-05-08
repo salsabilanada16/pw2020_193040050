@@ -1,0 +1,50 @@
+body {
+  background-image: url(../assets/img/Bg/3.jpg);
+}
+
+#title .container {
+  text-align: center;
+}
+
+#title h2 {
+  font-family: 'Lobster';
+}
+
+#title h5 {
+  margin-top: -20px;
+}
+
+#login {
+  margin-top: 40px;
+}
+
+#login .card-panel {
+  width: 700px;
+  height: 450px;
+}
+
+#login .row {
+  padding: 10px 0 10px;
+}
+
+#login h3 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+#login p {
+  color: red;
+  padding: 10px 0 10px;
+}
+
+#login button {
+  margin-left: 260px;
+}
+
+#login .registrasi {
+  padding-top: 20px;
+}
+
+#login .registrasi p {
+  text-align: center;
+}

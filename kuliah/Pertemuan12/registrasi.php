@@ -34,84 +34,86 @@ if (isset($_POST['registrasi'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrasi</title>
+
+  <link rel="stylesheet" href="css/registrasi.css">
 </head>
 
 <body>
-
-  <body style="background-image:url(assets/img/Bg/3.jpg)">
-    <!-- Title -->
-    <div class="container" style="text-align: center;">
-      <h2 style="font-family: 'Lobster';" class="white-text">WELCOME!</h2><br>
+  <!-- Title -->
+  <section id="title">
+    <div class="container">
+      <h2 class="white-text">WELCOME!</h2><br>
       <h5 class="white-text">Wanna be a Member? Let's Sign Up first</h5>
     </div>
-    <!-- Title -->
+  </section>
+  <!-- Title -->
 
-    <!-- Log In -->
-    <section id="login" class="grey lighten-3 scrollspy" style="margin-top: 50px;">
-      <div class="container">
-        <h3 class="light grey-text text-darken-3"></h3>
-        <div class="row" style="padding: 20px 0 20px;">
-          <div class="col m2 s12">
+  <!-- Log In -->
+  <section id="login" class="transparent scrollspy">
+    <div class="container">
+      <h3 class="light grey-text text-darken-3"></h3>
+      <div class="row">
+        <div class="col m2 s12">
 
-          </div>
+        </div>
 
-          <div class="col m8 s12">
-            <form action="" method="POST">
-              <div class="card-panel">
-                <h3 style="text-align: center;">Sign Up</h3>
+        <div class="col m8 s12">
+          <form action="" method="POST">
+            <div class="card-panel">
+              <h3>Sign Up</h3>
 
-                <div class="input-field">
-                  <input type="text" name="username" id="username" required class="validate" autofocus autocomplete="off">
-                  <label for="username">Username :</label>
-                </div>
-                <div class="input-field">
-                  <input type="password" name="password" id="password" required class="validate">
-                  <label for="password">Password :</label>
-                </div>
-                <div class="input-field">
-                  <input type="password" name="password2" id="password2" required>
-                  <label for="password">Konfirmasi Password :</label>
-                </div>
-
-                <button type="submit" name="register" class="btn pink lighten-3" style="margin-left: 290px;">Join!</button>
-
-                <div class="registrasi" style="padding-top: 20px">
-                  <p style="text-align: center;">You have an account already? <a href="login.php">Log in here</a></p>
-                </div>
+              <div class="input-field">
+                <input type="text" name="username" id="username" required class="validate" autofocus autocomplete="off">
+                <label for="username">Username :</label>
               </div>
-            </form>
-          </div>
+              <div class="input-field">
+                <input type="password" name="password" id="password" required class="validate">
+                <label for="password">Password :</label>
+              </div>
+              <div class="input-field">
+                <input type="password" name="password2" id="password2" required>
+                <label for="password">Konfirmasi Password :</label>
+              </div>
+
+              <button type="submit" name="register" class="btn pink lighten-3">Join!</button>
+
+              <div class="registrasi">
+                <p>You have an account already? <a href="login.php">Log in here</a></p>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
-    </section>
-    <!-- Akhir Log In -->
+    </div>
+  </section>
+  <!-- Akhir Log In -->
 
 
-    <!-- The JavaScript -->
-    <script type="text/javascript" src="css/js/materialize.min.js"></script>
-    <script>
-      const sideNav = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(sideNav);
+  <!-- The JavaScript -->
+  <script type="text/javascript" src="css/js/materialize.min.js"></script>
+  <script>
+    const sideNav = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(sideNav);
 
-      const slider = document.querySelectorAll('.slider');
-      M.Slider.init(slider, {
-        indicators: false,
-        height: 500,
-        transition: 600,
-        interval: 3000
-      });
+    const slider = document.querySelectorAll('.slider');
+    M.Slider.init(slider, {
+      indicators: false,
+      height: 500,
+      transition: 600,
+      interval: 3000
+    });
 
-      const parallax = document.querySelectorAll('.parallax');
-      M.Parallax.init(parallax);
+    const parallax = document.querySelectorAll('.parallax');
+    M.Parallax.init(parallax);
 
-      const materialbox = document.querySelectorAll('.materialboxed');
-      M.Materialbox.init(materialbox);
+    const materialbox = document.querySelectorAll('.materialboxed');
+    M.Materialbox.init(materialbox);
 
-      const scroll = document.querySelectorAll('.scrollspy');
-      M.ScrollSpy.init(scroll, {
-        scrollOffset: 50
-      });
-    </script>
-  </body>
+    const scroll = document.querySelectorAll('.scrollspy');
+    M.ScrollSpy.init(scroll, {
+      scrollOffset: 50
+    });
+  </script>
+</body>
 
 </html>

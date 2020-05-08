@@ -67,41 +67,41 @@ if (isset($_POST['ubah'])) {
     <!-- Form -->
     <div class="row">
       <form action="" method="POST" class="col s6">
-        <input type="hidden" name="id" value="<?= $mhs['id']; ?>">
+        <input type="hidden" name="id" value="<?= $mhs['id']; ?>""> 
         <div class=" row">
-          <div class="input-field col s6">
-            <label for="nama">Nama :</label><br>
-            <input type="text" name="nama" autofocus required value="<?= $mhs['nama']; ?>">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <label for="nrp">NRP :</label><br>
-            <input type="text" name="nrp" required value="<?= $mhs['nrp']; ?>">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <label for="email">Email :</label><br>
-            <input type="text" name="email" required value="<?= $mhs['email']; ?>">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <label for="jurusan">Jurusan :</label><br>
-            <input type="text" name="Jurusan" required value="<?= $mhs['jurusan']; ?>">
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6">
-            <label for="gambar">Gambar :</label><br>
-            <input type="text" name="gambar" required value="<?= $mhs['gambar']; ?>">
-          </div>
+        <div class="input-field col s6">
+          <label for="nama">Nama :</label><br>
+          <input type="text" name="nama" autofocus required value="<?= $mhs['nama']; ?>">
         </div>
     </div>
-    <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="tambah">Change Data!</button>
-    <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" href="index.php">Back</button>
-    </form>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="nrp">NRP :</label><br>
+        <input type="text" name="nrp" required value="<?= $mhs['nrp']; ?>">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="email">Email :</label><br>
+        <input type="text" name="email" required value="<?= $mhs['email']; ?>">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="jurusan">Jurusan :</label><br>
+        <input type="text" name="Jurusan" required value="<?= $mhs['jurusan']; ?>">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s6">
+        <label for="gambar">Gambar :</label><br>
+        <input type="text" name="gambar" required value="<?= $mhs['gambar']; ?>">
+      </div>
+    </div>
+  </div>
+  <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="tambah">Change Data!</button>
+  <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" href="index.php">Back</button>
+  </form>
   </div>
 
 

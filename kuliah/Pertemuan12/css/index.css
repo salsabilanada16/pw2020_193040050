@@ -1,0 +1,32 @@
+  #navbar .nav-wrapper {
+    height: 85px;
+  }
+
+  #navbar .brand-logo {
+    padding-top: 10px;
+    font-size: 50px;
+  }
+
+  #navbar button {
+    margin-right: 50px;
+    margin-top: 50px;
+    border-radius: 20px;
+    height: 30px;
+  }
+
+  #navbar button a {
+    font-family: 'Lobster Two';
+    font-size: 20px;
+  }
+
+  #navbar .container .btn {
+    border-radius: 20%;
+  }
+
+  #card h1 {
+    text-align: center;
+  }
+
+  #card .btn {
+    margin-left: 700px;
+  }

@@ -49,13 +49,11 @@ if (isset($_POST['tambah'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tambah Data Mahasiswa</title>
-
-  <link rel="stylesheet" href="css/tambah.css">
 </head>
 
 <body>
   <div class="container">
-    <h3>Form Tambah Data Mahasiswa</h3>
+    <h3 style="font-family: 'Kaushan Script', cursive; text-align: center;">Form Tambah Data Mahasiswa</h3>
 
     <!-- Form -->
     <div class="row">

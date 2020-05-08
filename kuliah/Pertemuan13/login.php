@@ -34,30 +34,23 @@ if (isset($_POST['login'])) {
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <title>Login</title>
-
-  <link rel="stylesheet" href="css/login.css">
-  <style>
-
-  </style>
 </head>
 
 <body>
 
-  <body>
+  <body style="background-image:url(assets/img/Bg/3.jpg)">
     <!-- Title -->
-    <section id="title">
-      <div class="container">
-        <h2 class="white-text">WELCOME!</h2><br>
-        <h5 class="white-text">Wanna join? Please Login first. Thanks</h5>
-      </div>
-    </section>
+    <div class="container" style="text-align: center;">
+      <h2 style="font-family: 'Lobster';" class="white-text">WELCOME!</h2><br>
+      <h5 class="white-text">Wanna join? Please Login first. Thanks</h5>
+    </div>
     <!-- Title -->
 
     <!-- Log In -->
-    <section id="login" class="transparant scrollspy">
+    <section id=" login" class="grey lighten-3 scrollspy" style="margin-top: 40px;">
       <div class="container">
 
-        <div class="row">
+        <div class="row" style="padding: 10px 0 10px;">
           <div class="col m2 s12">
 
           </div>
@@ -65,9 +58,9 @@ if (isset($_POST['login'])) {
           <div class="col m8 s12">
             <form action="" method="POST">
               <div class="card-panel">
-                <h3>Log In</h3>
+                <h3 style="text-align: center;">Log In</h3>
                 <?php if (isset($error)) : ?>
-                  <p>Username atau Password Salah</p>
+                  <p style="color: red; padding: 10px 0 10px;">Username atau Password Salah</p>
                 <?php endif; ?>
                 <div class="input-field">
                   <input type="text" name="username" id="username" required class="validate" autofocus autocomplete="off">
@@ -87,10 +80,10 @@ if (isset($_POST['login'])) {
                   </label>
                 </div>
 
-                <button type="submit" name="submit" class="btn pink lighten-3">Get Started</button>
+                <button type="submit" name="submit" class="btn pink lighten-3" style="margin-left: 260px;">Get Started</button>
 
-                <div class="registrasi">
-                  <p>Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
+                <div class="registrasi" style="padding-top: 20px">
+                  <p style="text-align: center;">Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
                 </div>
               </div>
             </form>

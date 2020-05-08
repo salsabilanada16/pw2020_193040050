@@ -1,20 +1,17 @@
 <?php
-session_start();
-
-if (isset($_SESSION['login'])) {
-  header("Location: index.php");
-  exit;
-}
-
 require 'functions.php';
 
-// Ketika tombol login ditekan
-if (isset($_POST['login'])) {
-  $login = login($_POST);
+if (isset($_POST['registrasi'])) {
+  if (registrasi($_POST) > 0) {
+    echo "<script>
+            alert('User berhasil ditambahkan. Silahkan login');
+            document.location.href = 'login.php';
+          </script>";
+  } else {
+    echo 'User gagal ditambahkan!';
+  }
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,31 +30,27 @@ if (isset($_POST['login'])) {
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
-  <title>Login</title>
 
-  <link rel="stylesheet" href="css/login.css">
-  <style>
-
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrasi</title>
 </head>
 
 <body>
 
-  <body>
+  <body style="background-image:url(assets/img/Bg/3.jpg)">
     <!-- Title -->
-    <section id="title">
-      <div class="container">
-        <h2 class="white-text">WELCOME!</h2><br>
-        <h5 class="white-text">Wanna join? Please Login first. Thanks</h5>
-      </div>
-    </section>
+    <div class="container" style="text-align: center;">
+      <h2 style="font-family: 'Lobster';" class="white-text">WELCOME!</h2><br>
+      <h5 class="white-text">Wanna be a Member? Let's Sign Up first</h5>
+    </div>
     <!-- Title -->
 
     <!-- Log In -->
-    <section id="login" class="transparant scrollspy">
+    <section id="login" class="grey lighten-3 scrollspy" style="margin-top: 50px;">
       <div class="container">
-
-        <div class="row">
+        <h3 class="light grey-text text-darken-3"></h3>
+        <div class="row" style="padding: 20px 0 20px;">
           <div class="col m2 s12">
 
           </div>
@@ -65,10 +58,8 @@ if (isset($_POST['login'])) {
           <div class="col m8 s12">
             <form action="" method="POST">
               <div class="card-panel">
-                <h3>Log In</h3>
-                <?php if (isset($error)) : ?>
-                  <p>Username atau Password Salah</p>
-                <?php endif; ?>
+                <h3 style="text-align: center;">Sign Up</h3>
+
                 <div class="input-field">
                   <input type="text" name="username" id="username" required class="validate" autofocus autocomplete="off">
                   <label for="username">Username :</label>
@@ -77,20 +68,15 @@ if (isset($_POST['login'])) {
                   <input type="password" name="password" id="password" required class="validate">
                   <label for="password">Password :</label>
                 </div>
-
-                <div class="switch remember" style="padding: 15px 0 25px;">
-                  <label>
-                    Ops
-                    <input type="checkbox" name="remember">
-                    <span class="lever"></span>
-                    Remember Me
-                  </label>
+                <div class="input-field">
+                  <input type="password" name="password2" id="password2" required>
+                  <label for="password">Konfirmasi Password :</label>
                 </div>
 
-                <button type="submit" name="submit" class="btn pink lighten-3">Get Started</button>
+                <button type="submit" name="register" class="btn pink lighten-3" style="margin-left: 290px;">Join!</button>
 
-                <div class="registrasi">
-                  <p>Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
+                <div class="registrasi" style="padding-top: 20px">
+                  <p style="text-align: center;">You have an account already? <a href="login.php">Log in here</a></p>
                 </div>
               </div>
             </form>
@@ -101,7 +87,7 @@ if (isset($_POST['login'])) {
     <!-- Akhir Log In -->
 
 
-    <!--JavaScript at end of body for optimized loading-->
+    <!-- The JavaScript -->
     <script type="text/javascript" src="css/js/materialize.min.js"></script>
     <script>
       const sideNav = document.querySelectorAll('.sidenav');
