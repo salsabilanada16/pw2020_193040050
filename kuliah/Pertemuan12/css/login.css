@@ -32,6 +32,10 @@ body {
   margin-top: 10px;
 }
 
+#login .switch {
+  padding: 15px 0 25px;
+}
+
 #login p {
   color: red;
   padding: 10px 0 10px;

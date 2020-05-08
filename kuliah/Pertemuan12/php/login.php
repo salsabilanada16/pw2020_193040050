@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['login'])) {
-  header("Location: index.php");
+  header("Location: ../index.php");
   exit;
 }
 
@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +35,7 @@ if (isset($_POST['login'])) {
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <title>Login</title>
 
-  <link rel="stylesheet" href="css/login.css">
+  <link rel="stylesheet" href="../css/login.css">
   <style>
 
   </style>
@@ -78,7 +78,7 @@ if (isset($_POST['login'])) {
                   <label for="password">Password :</label>
                 </div>
 
-                <div class="switch remember" style="padding: 15px 0 25px;">
+                <div class="switch remember">
                   <label>
                     Ops
                     <input type="checkbox" name="remember">
@@ -102,7 +102,7 @@ if (isset($_POST['login'])) {
 
 
     <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="css/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../css/js/materialize.min.js"></script>
     <script>
       const sideNav = document.querySelectorAll('.sidenav');
       M.Sidenav.init(sideNav);

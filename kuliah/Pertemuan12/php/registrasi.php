@@ -20,7 +20,7 @@ if (isset($_POST['registrasi'])) {
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,7 +35,7 @@ if (isset($_POST['registrasi'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrasi</title>
 
-  <link rel="stylesheet" href="css/registrasi.css">
+  <link rel="stylesheet" href="../css/registrasi.css">
 </head>
 
 <body>
@@ -90,7 +90,7 @@ if (isset($_POST['registrasi'])) {
 
 
   <!-- The JavaScript -->
-  <script type="text/javascript" src="css/js/materialize.min.js"></script>
+  <script type="text/javascript" src="../css/js/materialize.min.js"></script>
   <script>
     const sideNav = document.querySelectorAll('.sidenav');
     M.Sidenav.init(sideNav);

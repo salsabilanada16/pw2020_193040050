@@ -3,7 +3,7 @@ session_start();
 
 // Tidak bisa masuk ke halaman manapun sebelum login
 if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
+  header("Location: php/login.php");
   exit;
 }
 
@@ -36,13 +36,11 @@ if (isset($_POST['cari'])) {
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Pacifico&family=Rubik&display=swap" rel="stylesheet">
 
-  <!-- Style -->
-  <link rel="stylesheet" href="css/style.css">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Mahasiswa</title>
 
+  <!-- Style -->
   <link rel="stylesheet" href="css/index.css">
 </head>
 
@@ -57,7 +55,7 @@ if (isset($_POST['cari'])) {
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li>
             <button class="grey lighten-1">
-              <a href="logout.php" class="black-text">Logout</a>
+              <a href="php/logout.php" class="black-text">Logout</a>
             </button>
           </li>
         </ul>
@@ -65,7 +63,7 @@ if (isset($_POST['cari'])) {
     </nav>
     <br>
     <div class="container">
-      <a href="tambah.php" class="black btn white-text btn">Tambah Data Mahasiswa</a>
+      <a href="php/tambah.php" class="black btn white-text btn">Tambah Data Mahasiswa</a>
       <form action="" method="POST">
         <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus>
         <button type="submit" name="cari" class="btn-small">Cari!</button>
@@ -74,7 +72,6 @@ if (isset($_POST['cari'])) {
     <br>
   </section>
   <!-- Akhir Navbar -->
-
 
 
   <!-- Cards -->
@@ -104,7 +101,7 @@ if (isset($_POST['cari'])) {
                 </span>
               </div>
               <div class="card-action">
-                <a href="detail.php?id=<?= $mhs['id']; ?>" class="black btn white-text">Lihat Detail</a>
+                <a href="php/detail.php?id=<?= $mhs['id']; ?>" class="black btn white-text">Lihat Detail</a>
               </div>
             </div>
           </div>

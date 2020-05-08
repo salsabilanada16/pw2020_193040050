@@ -116,7 +116,7 @@ function login($data)
       // Set session
       $_SESSION['login'] = true;
 
-      header("Location: index.php");
+      header("Location: ../index.php");
       exit;
     }
   }
