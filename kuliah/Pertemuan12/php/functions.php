@@ -112,7 +112,7 @@ function login($data)
   if ($user = query("SELECT * FROM user WHERE username = '$username'")) {
 
     // Cek password
-    if (password_verify($password, $user['password'])) {
+    if (password_verify($password, $user['password'])) {    /* password_verify -> Kebalikan dari password_hash. Dia akan ngebandingin string biasa dgn string yg udah diacak */
       // Set session
       $_SESSION['login'] = true;
 
@@ -131,19 +131,18 @@ function registrasi($data)
 {
   $conn = koneksi();
 
-  $username = htmlspecialchars(strtolower($data['username']));
-  $password1 = mysqli_real_escape_string($conn, $data['password1']);
+  $username = htmlspecialchars(strtolower($data['username']));  /* strtolower -> Apapun yang dituliskan sama usernya akan menjadi huruf kecil */
+  $password1 = mysqli_real_escape_string($conn, $data['password1']);  /* mysqli_real_escape_string -> Yang akan ngecek password itu ada script jahat atau tidak */
   $password2 = mysqli_real_escape_string($conn, $data['password2']);
 
   // Jika username atau password kosong
-  if (empty('$username') || empty($password1) || empty($password2)) {
+  if (empty($username) || empty($password1) || empty($password2)) {
     echo "<script>
             alert('Username / password tidak boleh kosong!');
             document.location.href = 'registrasi.php';
           </script>";
     return false;
   }
-
 
   // Jika username sudah ada
   if (query("SELECT * FROM user WHERE username = '$username'")) {
@@ -154,8 +153,7 @@ function registrasi($data)
     return false;
   }
 
-
-  // Jika konfirmasi password tidak sesuai
+  // Jika konfirmasi password tidak sesuai dengan password
   if ($password1 !== $password2) {
     echo "<script>
             alert('Konfirmasi password tidak sesuai!');
@@ -164,8 +162,16 @@ function registrasi($data)
     return false;
   }
 
+  // Jika username < 5 digit (tidak boleh < 5)
+  if (strlen($username) < 5) {
+    echo "<script>
+              alert('Username terlalu pendek!');
+              document.location.href = 'registrasi.php';
+            </script>";
+    return false;
+  }
 
-  // Jika password < 5 digit tidak boleh
+  // Jika password < 5 digit (tidak boleh < 5)
   if (strlen($password1) < 5) {
     echo "<script>
             alert('Password terlalu pendek!');
@@ -174,10 +180,9 @@ function registrasi($data)
     return false;
   }
 
-
   // Jika username & password sudah sesuai
   // Enkripsi password
-  $password_baru = password_hash($password1, PASSWORD_DEFAULT);
+  $password_baru = password_hash($password1, PASSWORD_DEFAULT); // PASSWORD_DEFAULT -> Kalau suatu saat enkripsi passwordnya diperbaharui, dia udah ngambil yang paling baru */
 
   // Insert ke tabel user
   $query = "INSERT INTO user

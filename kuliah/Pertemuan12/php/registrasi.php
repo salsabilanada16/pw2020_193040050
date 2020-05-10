@@ -1,10 +1,11 @@
 <?php
 require 'functions.php';
 
+// Jika tombol registrasi diklik
 if (isset($_POST['registrasi'])) {
   if (registrasi($_POST) > 0) {
     echo "<script>
-            alert('User berhasil ditambahkan. Silahkan login');
+            alert('User baru berhasil ditambahkan. Silahkan login');
             document.location.href = 'login.php';
           </script>";
   } else {
@@ -33,7 +34,7 @@ if (isset($_POST['registrasi'])) {
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Registrasi</title>
+  <title>Registration</title>
 
   <link rel="stylesheet" href="../css/registrasi.css">
 </head>
@@ -67,7 +68,7 @@ if (isset($_POST['registrasi'])) {
                 <label for="username">Username :</label>
               </div>
               <div class="input-field">
-                <input type="password" name="password" id="password" required class="validate">
+                <input type="password" name="password1" id="password1" required class="validate">
                 <label for="password">Password :</label>
               </div>
               <div class="input-field">
@@ -75,7 +76,7 @@ if (isset($_POST['registrasi'])) {
                 <label for="password">Konfirmasi Password :</label>
               </div>
 
-              <button type="submit" name="register" class="btn pink lighten-3">Join!</button>
+              <button type="submit" name="registrasi" class="btn pink lighten-3">Join!</button>
 
               <div class="registrasi">
                 <p>You have an account already? <a href="login.php">Log in here</a></p>
