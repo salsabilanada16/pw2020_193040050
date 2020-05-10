@@ -96,6 +96,10 @@ if (isset($_POST['tambah'])) {
             width: 750px;
         }
 
+        #tambah form {
+            margin-left: 100px;
+        }
+
         #title h3 {
             text-align: center;
             font-family: 'Kaushan Script', cursive;
@@ -118,9 +122,9 @@ if (isset($_POST['tambah'])) {
 
     <!-- Form -->
     <div class="container">
-        <section id="tambah">
+        <section id="tambah" class="grey lighten-5">
             <div class="row">
-                <form action="" method="POST" class="col s6">
+                <form action="" method="POST" class="col s6" enctype="multipart/form-data">
                     <input type="hidden" name="Id" id="Id" value="<?= $pkn['Id']; ?>">
                     <div class="row">
                         <div class="input-field col s6">
@@ -165,7 +169,7 @@ if (isset($_POST['tambah'])) {
                         </div>
                     </div>
             </div>
-            <button type="submit" name="tambah" class="btn pink-effect pink lighten-4 z-depth-2">
+            <button type="submit" name="tambah" class="btn pink-effect pink lighten-4 z-depth-2" style="margin-left: 400px;">
                 Add Data!</button>
             <a href="admin.php" type="submit" class="btn pink-effect pink lighten-4 z-depth-2" style="margin-left: 40px;">
                 Back

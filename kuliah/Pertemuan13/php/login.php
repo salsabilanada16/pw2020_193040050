@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION['login'])) {
-  header("Location: index.php");
+  header("Location: ../index.php");
   exit;
 }
 
@@ -23,7 +23,7 @@ if (isset($_POST['login'])) {
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,23 +34,27 @@ if (isset($_POST['login'])) {
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
   <title>Login</title>
+
+  <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
 
-  <body style="background-image:url(assets/img/Bg/3.jpg)">
+  <body>
     <!-- Title -->
-    <div class="container" style="text-align: center;">
-      <h2 style="font-family: 'Lobster';" class="white-text">WELCOME!</h2><br>
-      <h5 class="white-text">Wanna join? Please Login first. Thanks</h5>
-    </div>
+    <section id="title">
+      <div class="container">
+        <h2 class="white-text">WELCOME!</h2><br>
+        <h5 class="white-text">Wanna join? Please Login first. Thanks</h5>
+      </div>
+    </section>
     <!-- Title -->
 
     <!-- Log In -->
-    <section id=" login" class="grey lighten-3 scrollspy" style="margin-top: 40px;">
+    <section id="login" class="transparant scrollspy">
       <div class="container">
 
-        <div class="row" style="padding: 10px 0 10px;">
+        <div class="row">
           <div class="col m2 s12">
 
           </div>
@@ -58,9 +62,9 @@ if (isset($_POST['login'])) {
           <div class="col m8 s12">
             <form action="" method="POST">
               <div class="card-panel">
-                <h3 style="text-align: center;">Log In</h3>
-                <?php if (isset($error)) : ?>
-                  <p style="color: red; padding: 10px 0 10px;">Username atau Password Salah</p>
+                <h3>Log In</h3>
+                <?php if (isset($login['error'])) : ?>
+                  <p>Username atau Password Salah</p>
                 <?php endif; ?>
                 <div class="input-field">
                   <input type="text" name="username" id="username" required class="validate" autofocus autocomplete="off">
@@ -71,7 +75,7 @@ if (isset($_POST['login'])) {
                   <label for="password">Password :</label>
                 </div>
 
-                <div class="switch remember" style="padding: 15px 0 25px;">
+                <div class="switch remember">
                   <label>
                     Ops
                     <input type="checkbox" name="remember">
@@ -80,10 +84,10 @@ if (isset($_POST['login'])) {
                   </label>
                 </div>
 
-                <button type="submit" name="submit" class="btn pink lighten-3" style="margin-left: 260px;">Get Started</button>
+                <button type="submit" name="login" class="btn pink lighten-3">Get Started</button>
 
-                <div class="registrasi" style="padding-top: 20px">
-                  <p style="text-align: center;">Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
+                <div class="registrasi">
+                  <p>Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>
                 </div>
               </div>
             </form>
@@ -95,7 +99,7 @@ if (isset($_POST['login'])) {
 
 
     <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="css/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../css/js/materialize.min.js"></script>
     <script>
       const sideNav = document.querySelectorAll('.sidenav');
       M.Sidenav.init(sideNav);

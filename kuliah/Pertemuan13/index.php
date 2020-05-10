@@ -3,11 +3,11 @@ session_start();
 
 // Tidak bisa masuk ke halaman manapun sebelum login
 if (!isset($_SESSION['login'])) {
-  header("Location: login.php");
+  header("Location: php/login.php");
   exit;
 }
 
-require 'functions.php';
+require 'php/functions.php';
 
 // Tampung ke variable Mahasiswa
 $mahasiswa = query("SELECT * FROM mahasiswa");
@@ -36,84 +36,85 @@ if (isset($_POST['cari'])) {
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Pacifico&family=Rubik&display=swap" rel="stylesheet">
 
-  <!-- Style -->
-  <link rel="stylesheet" href="css/style.css">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daftar Mahasiswa</title>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body>
+<body style="background-image: url('assets/img/Bg/1.gif'); background-repeat: no-repeat;">
   <!-- Navbar -->
-  <nav class="nav-extended" id="home">
-    <div class="nav-wrapper black navbar-fixed" style="height: 85px;">
-      <div class="container">
-        <a href="#home" class="brand-logo center white-text" style="padding-top: 10px; font-size: 50px;">Daftar Mahasiswa</a>
+  <section id="navbar">
+    <nav class="nav-extended" id="home">
+      <div class="nav-wrapper black navbar-fixed">
+        <div class="container">
+          <a href="#home" class="brand-logo center white-text">Daftar Mahasiswa</a>
+        </div>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li>
+            <button class="grey lighten-1">
+              <a href="php/logout.php" class="black-text">Logout</a>
+            </button>
+          </li>
+        </ul>
       </div>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li>
-          <button style="margin-right: 50px; margin-top: 50px; border-radius: 20px; height: 30px;" class="grey lighten-1">
-            <a href="logout.php" class="black-text" style="font-family: 'Lobster Two'; font-size: 20px;">Logout</a>
-          </button>
-        </li>
-      </ul>
+    </nav>
+    <br>
+    <div class="container">
+      <a href="php/tambah.php" class="black btn white-text btn">Tambah Data Mahasiswa</a>
+      <form action="" method="POST">
+        <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus style="margin-top: 20px;" class="keyword">
+        <button type="submit" name="cari" class="btn-small tombol-cari" style="margin-top: 10px;">Cari!</button>
+      </form>
     </div>
-  </nav>
-  <br>
-  <div class="container">
-    <a href="tambah.php" class="black btn white-text btn" style="border-radius: 20%;">Tambah Data Mahasiswa</a>
-    <form action="" method="POST">
-      <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus>
-      <button type="submit" name="cari" class="btn-small">Cari!</button>
-    </form>
-  </div>
-  <br>
-
-
-
+    <br>
+  </section>
+  <!-- Akhir Navbar -->
 
 
   <!-- Cards -->
   <!-- Data tidak ditemukan -->
-  <?php if (empty($mahasiswa)) : ?>
-    <tr>
-      <td>
-        <h1 style="text-align: center;">Data tidak ditemukan</h1>
-      </td>
-      <td><a href="index.php" class="black btn white-text btn" style="margin-left: 700px;">Kembali</a></td>
-    </tr>
-  <?php endif; ?>
-
   <div class="container">
-    <div class="row">
-      <?php foreach ($mahasiswa as $mhs) : ?>
-        <div class="col s12 m4">
-          <div class="card z-depth-3">
-            <div class="card-image">
-              <img src="img/<?= $mhs['gambar']; ?>" height="500px">
-            </div>
+    <section id="card">
+      <?php if (empty($mahasiswa)) : ?>
+        <tr>
+          <td>
+            <h1>Data tidak ditemukan</h1>
+          </td>
+          <td><a href="index.php" class="black btn white-text btn">Kembali</a></td>
+        </tr>
+      <?php endif; ?>
 
-            <div class="card-content">
-              <span class="card-title teal-text text-darken-4">
-                <?= $mhs['nama']; ?><br>
-              </span>
-            </div>
-            <div class="card-action">
-              <a href="detail.php?id=<?= $mhs['id']; ?>" class="black btn white-text">Lihat Detail</a>
+
+      <div class="row">
+        <?php foreach ($mahasiswa as $mhs) : ?>
+          <div class="col s12 m4">
+            <div class="card z-depth-3">
+              <div class="card-image">
+                <img src="assets/img/<?= $mhs['gambar']; ?>" height="500px">
+              </div>
+
+              <div class="card-content">
+                <span class="card-title teal-text text-darken-4" style="text-align: center;">
+                  <?= $mhs['nama']; ?><br>
+                </span>
+              </div>
+              <div class="card-action">
+                <a href="php/detail.php?id=<?= $mhs['id']; ?>" class="black btn white-text" style="margin-left: 80px;">Lihat Detail</a>
+              </div>
             </div>
           </div>
-        </div>
-      <?php endforeach; ?>
-    </div>
+        <?php endforeach; ?>
+      </div>
+    </section>
   </div>
-
-
 
 
   <!--JavaScript at end of body for optimized loading-->
   <script type="text/javascript" src="css/js/materialize.min.js"></script>
-
+  <script src="css/js/script.js"></script>
 </body>
 
 </html>
