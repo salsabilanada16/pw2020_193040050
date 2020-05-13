@@ -1,4 +1,5 @@
 <?php
+// Mencegah file diakses sebelum melakukan login
 session_start();
 
 // Tidak bisa masuk ke halaman manapun sebelum login
@@ -7,6 +8,7 @@ if (!isset($_SESSION['login'])) {
   exit;
 }
 
+// menghubungkan dengan file php lainnya
 require 'functions.php';
 
 // Cek apakah tombol tambah sudah ditekan

@@ -46,8 +46,8 @@ if (isset($_POST['cari'])) {
                     <ul class="right hide-on-med-and-down">
                         <li>
                             <form action="" method="POST">
-                                <input type="text" name="keyword" autofocus>
-                                <button type="submit" name="cari" class="pink-effect pink lighten-4">Search</button>
+                                <input type="text" name="keyword" class="keyword" autofocus autocomplete="off">
+                                <button type="submit" name="cari" class="pink-effect pink lighten-4 tombol-cari">Search</button>
                             </form>
                         </li>
                     </ul>
@@ -110,16 +110,15 @@ if (isset($_POST['cari'])) {
 
 
     <!-- Cards -->
-    <section id="shop">
-        <div class="container">
-
+    <div class="container">
+        <section id="shop">
             <div class="row">
                 <?php if (empty($pakaian)) : ?>
                     <tr>
                         <td>
-                            <h1>Data tidak ditemukan</h1>
+                            <h1>Data Not Found. Try Again!</h1>
                         </td>
-                        <td><a href="index.php" class="btn pink-effect pink lighten-4">Kembali</a></td>
+                        <td><a href="index.php" class="btn pink-effect pink lighten-4" style="margin-left: 500px;">Back</a></td>
                     </tr>
                 <?php else : ?>
                     <?php foreach ($pakaian as $pkn) : ?>
@@ -148,9 +147,8 @@ if (isset($_POST['cari'])) {
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
-
-        </div>
-    </section>
+        </section>
+    </div>
     <!-- Akhir Cards -->
 
 
@@ -266,6 +264,7 @@ if (isset($_POST['cari'])) {
             $('.parallax').parallax();
         });
     </script>
+    <script src="css/js/index.js"></script>
 </body>
 
 </html>

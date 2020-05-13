@@ -1,8 +1,8 @@
 <?php
 require 'functions.php';
 
+// Jika tombol registrasi diklik
 if (isset($_POST["register"])) {
-
   if (registrasi($_POST) > 0) {
     echo "<script>
               alert('Registrasi Berhasil');
@@ -74,8 +74,12 @@ if (isset($_POST["register"])) {
                 <label for="username">Username :</label>
               </div>
               <div class="input-field">
-                <input type="password" name="password" id="password" required class="validate">
+                <input type="password" name="password1" id="password1" required class="validate">
                 <label for="password">Password :</label>
+              </div>
+              <div class="input-field">
+                <input type="password" name="password2" id="password2" required>
+                <label for="password">Confirm Password :</label>
               </div>
 
               <button type="submit" name="register" class="btn pink lighten-3">Join!</button>

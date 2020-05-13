@@ -45,6 +45,14 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
       background-image: url('../assets/img/Bg/2.gif');
       background-size: cover;
     }
+
+    #home a {
+      font-family: 'Pacifico';
+    }
+
+    #card {
+      padding-top: 20px;
+    }
   </style>
 </head>
 
@@ -54,14 +62,14 @@ $mhs = query("SELECT * FROM mahasiswa WHERE id = $id");
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper pink lighten-5">
-          <a href="#home" class="brand-logo center black-text" style="font-family: 'Pacifico';">Detail Mahasiswa</a>
+          <a href="#home" class="brand-logo center black-text">Detail Mahasiswa</a>
         </div>
       </nav>
     </div>
   </section>
 
   <!-- Cards -->
-  <section id="card" style="padding-top: 20px;">
+  <section id="card">
     <div class="container">
       <div class="row">
         <div class="col s12 m4 offset-m4">

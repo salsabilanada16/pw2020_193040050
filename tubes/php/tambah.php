@@ -2,18 +2,16 @@
 // Mencegah file diakses sebelum melakukan login
 session_start();
 
+// Tidak bisa masuk ke halaman manapun sebelum login
 if (!isset($_SESSION["username"])) {
     header("Location: login.php");
     exit;
 }
 
-
 // menghubungkan dengan file php lainnya
 require 'functions.php';
 
-
-
-// Cek apakah
+// Cek apakah tombol tambah sudah ditekan
 if (isset($_POST['tambah'])) {
     if (tambah($_POST) > 0) {
         echo "<script>
@@ -48,63 +46,11 @@ if (isset($_POST['tambah'])) {
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/tambah.css">
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Data</title>
-
-    <style>
-        body {
-            background-image: url(../assets/img/Bg/1.jpg);
-        }
-
-        #home img {
-            padding-top: 10px;
-            margin-bottom: -10px;
-            margin-left: 670px;
-        }
-
-        #home h3 {
-            font-family: 'Kaushan Script', cursive;
-            text-align: center;
-        }
-
-        #home .navbar-fixed nav {
-            height: 80px;
-        }
-
-        #home .container nav {
-            height: 100px;
-            padding-top: 10px;
-        }
-
-        #tambah {
-            margin-bottom: 70px;
-        }
-
-        #tambah .row {
-            margin-left: 20px;
-        }
-
-        #tambah .btn {
-            margin-left: 320px;
-            margin-bottom: 30px;
-        }
-
-        #tambah input {
-            width: 750px;
-        }
-
-        #tambah form {
-            margin-left: 100px;
-        }
-
-        #title h3 {
-            text-align: center;
-            font-family: 'Kaushan Script', cursive;
-        }
-    </style>
+    <title>Add Data Elements</title>
 </head>
 
 <body>
@@ -116,7 +62,7 @@ if (isset($_POST['tambah'])) {
 
     <!-- Title -->
     <section id="title">
-        <h3>Form Ubah Data Pakaian</h3>
+        <h3>Form Add Data</h3>
     </section>
     <!-- Akhir Title -->
 
@@ -128,8 +74,9 @@ if (isset($_POST['tambah'])) {
                     <input type="hidden" name="Id" id="Id" value="<?= $pkn['Id']; ?>">
                     <div class="row">
                         <div class="input-field col s6">
-                            <label for="Gambar">Gambar :</label><br>
-                            <input type="text" name="Gambar" id="Gambar" autofocus required>
+                            <label for="Gambar" class="gambar">Pict :</label><br>
+                            <input type="file" name="gambar" class="gambar" onchange="previewImage()" style="padding-top: 25px; margin-bottom: -15px;">
+                            <img src="../assets/img/nophoto.png" width="300" style="display: block; padding-top: 20px;" class="img-preview">
                         </div>
                     </div>
                     <div class="row">
@@ -140,25 +87,25 @@ if (isset($_POST['tambah'])) {
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <label for="Nama">Nama :</label><br>
+                            <label for="Nama">Name :</label><br>
                             <input type="text" name="Nama" id="Nama" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <label for="Harga">Harga :</label><br>
+                            <label for="Harga">Price :</label><br>
                             <input type="text" name="Harga" id="Harga" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <label for="Warna">Warna :</label><br>
+                            <label for="Warna">Color :</label><br>
                             <input type="text" name="Warna" id="Warna" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <label for="Ukuran">Ukuran :</label><br>
+                            <label for="Ukuran">Size :</label><br>
                             <input type="text" name="Ukuran" id="Ukuran" required>
                         </div>
                     </div>
@@ -188,6 +135,8 @@ if (isset($_POST['tambah'])) {
             M.updateTextFields();
         });
     </script>
+
+    <script src="../css/js/script.js"></script>
 </body>
 
 </html>

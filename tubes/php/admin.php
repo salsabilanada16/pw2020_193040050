@@ -59,8 +59,8 @@ if (isset($_POST['cari'])) {
                             </a></li>
                         <li>
                             <form action="" method="POST">
-                                <input type="text" name="keyword" autofocus>
-                                <button type="submit" name="cari" class="pink-effect pink lighten-4 pink-text text-darken-3">Search</button>
+                                <input type="text" name="keyword" class="keyword" autofocus autocomplete="off">
+                                <button type="submit" name="cari" class="pink-effect pink lighten-4 tombol-cari">Search</button>
                             </form>
                         </li>
                     </ul>
@@ -127,15 +127,15 @@ if (isset($_POST['cari'])) {
 
 
     <!-- Cards -->
-    <section id="shop">
-        <div class="container">
+    <div class="container">
+        <section id="shop">
             <div class="row">
                 <?php if (empty($pakaian)) : ?>
                     <tr>
                         <td>
-                            <h1>Data tidak ditemukan</h1>
+                            <h1>Data Not Found. Try Again!</h1>
                         </td>
-                        <td><a href="admin.php" class="btn pink-effect pink lighten-4 kembali">Kembali</a></td>
+                        <td><a href="admin.php" class="btn pink-effect pink lighten-4 kembali" style="margin-left: 500px;">Back</a></td>
                     </tr>
                 <?php else : ?>
                     <?php foreach ($pakaian as $pkn) : ?>
@@ -148,7 +148,7 @@ if (isset($_POST['cari'])) {
 
                                 <div class="card-content">
                                     <p class="nama">
-                                        <a href="php/detail.php?Id=<?= $pkn['Id'] ?>">
+                                        <a href="detail.php?Id=<?= $pkn['Id'] ?>">
                                             <span class="pink-text text-darken-3">
                                                 <?= $pkn["Kode"] ?><br>
                                                 <?= $pkn["Harga"] ?><br>
@@ -170,8 +170,8 @@ if (isset($_POST['cari'])) {
                     <?php endforeach; ?>
                 <?php endif; ?>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
     <!-- Akhir Cards -->
 
     <section id="line1" class="newarrival white scrollspy">
@@ -279,6 +279,7 @@ if (isset($_POST['cari'])) {
             $('.parallax').parallax();
         });
     </script>
+    <script src="../css/js/admin.js"></script>
 </body>
 
 </html>

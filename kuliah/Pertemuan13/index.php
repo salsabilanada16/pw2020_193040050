@@ -65,7 +65,7 @@ if (isset($_POST['cari'])) {
     <div class="container">
       <a href="php/tambah.php" class="black btn white-text btn">Tambah Data Mahasiswa</a>
       <form action="" method="POST">
-        <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus style="margin-top: 20px;" class="keyword">
+        <input type="text" name="keyword" placeholder="Masukan keyword pencarian.." autocomplete="off" autofocus style="margin-top: 20px;" class="keyword white-text">
         <button type="submit" name="cari" class="btn-small tombol-cari" style="margin-top: 10px;">Cari!</button>
       </form>
     </div>

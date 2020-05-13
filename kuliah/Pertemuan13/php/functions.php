@@ -121,9 +121,7 @@ function hapus($id)
     unlink('../assets/img/' . $mhs['gambar']);
   }
 
-
   mysqli_query($conn, "DELETE FROM mahasiswa WHERE id = $id") or die(mysqli_error($conn));
-
   return mysqli_affected_rows($conn);
 }
 

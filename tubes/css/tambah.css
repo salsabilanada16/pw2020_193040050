@@ -1,0 +1,53 @@
+body {
+  background-image: url(../assets/img/Bg/1.jpg);
+}
+
+#home img {
+  padding-top: 10px;
+  margin-bottom: -10px;
+  margin-left: 670px;
+}
+
+#home h3 {
+  font-family: 'Kaushan Script', cursive;
+  text-align: center;
+}
+
+#home .navbar-fixed nav {
+  height: 80px;
+}
+
+#home .container nav {
+  height: 100px;
+  padding-top: 10px;
+}
+
+#tambah {
+  margin-bottom: 70px;
+}
+
+#tambah .gambar {
+  padding-bottom: 20px;
+}
+
+#tambah .row {
+  margin-left: 20px;
+}
+
+#tambah .btn {
+  margin-left: 320px;
+  margin-bottom: 30px;
+}
+
+#tambah input {
+  width: 750px;
+}
+
+#tambah form {
+  margin-left: 100px;
+}
+
+#title h3 {
+  text-align: center;
+  font-family: 'Kaushan Script', cursive;
+}

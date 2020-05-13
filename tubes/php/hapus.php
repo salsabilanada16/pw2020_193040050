@@ -22,7 +22,6 @@ if (!isset($_GET['Id'])) {
 // Mengambil id dari URL
 $Id = $_GET['Id'];
 
-
 if (hapus($Id) > 0) {
     echo "<script>
             alert('Data Berhasil Dihapus!);
