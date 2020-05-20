@@ -51,7 +51,7 @@ if (isset($_POST['cari'])) {
 
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" class="scrollspy" style="background-image: url(../img/Background/bg3.jpg)">
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" class="scrollspy" style="background-image: url(../img/Background/bg6.jpg)">
 
     <!-- LOADER -->
     <div id="preloader">
@@ -72,7 +72,7 @@ if (isset($_POST['cari'])) {
                     <span></span>
                     <span></span>
                 </button>
-                <h1><span style="font-size: 250%; color: #e6005c;" class="navbar-brand">RADZ</span>PROJECT</h1>
+                <h1><span style="font-size: 250%; color: #e60073;" class="navbar-brand">RADZ</span>PROJECT</h1>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="#home">Home</a></li>
@@ -110,7 +110,7 @@ if (isset($_POST['cari'])) {
                                     <div class="slide_text">
                                         <h3>"The only real elegance is in the mind; if you’ve got that, the rest really comes from it.”</h3>
                                         <br>
-                                        <h4><span class="theme_color">— Diana Vreeland</span></h4>
+                                        <h4><span class="theme_color" style="color: palevioletred">— Diana Vreeland</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -123,7 +123,7 @@ if (isset($_POST['cari'])) {
                                     <div class="slide_text">
                                         <h3>“Don’t be into trends. Don’t make fashion own you, but you decide what you are, what you want to express by the way you dress and the way you live.”</h3>
                                         <br>
-                                        <h4><span class="theme_color">— Gianni Versace</span></h4>
+                                        <h4><span class="theme_color" style="color: palevioletred">— Gianni Versace</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +136,7 @@ if (isset($_POST['cari'])) {
                                     <div class="slide_text">
                                         <h3>“Fashion is what you’re offered four times a year by designers. And style is what you choose.”</h3>
                                         <br>
-                                        <h4><span class="theme_color">— Lauren Hutton</span></h4>
+                                        <h4><span class="theme_color" style="color: palevioletred">— Lauren Hutton</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ if (isset($_POST['cari'])) {
                                     <div class="slide_text">
                                         <h3>“What you wear is how you present yourself to the world, especially today, when human contacts are so quick. Fashion is instant language.”</h3>
                                         <br>
-                                        <h4><span class="theme_color">—Miuccia Prada</span></h4>
+                                        <h4><span class="theme_color" style="color: palevioletred">—Miuccia Prada</span></h4>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ if (isset($_POST['cari'])) {
                                     <div class="slide_text">
                                         <h3>“Create your own style… let it be unique for yourself and yet identifiable for others.”</h3>
                                         <br>
-                                        <h4><span class="theme_color">― Anna Wintour</span></h4>
+                                        <h4><span class="theme_color" style="color: palevioletred">― Anna Wintour</span></h4>
                                     </div>
                                 </div>
                             </div>

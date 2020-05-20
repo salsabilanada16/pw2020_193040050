@@ -101,7 +101,7 @@ if (isset($_COOKIE['username']) && isset($_COOKIE['hash'])) {
 
 </head>
 
-<body id="contact" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98" style="background-image: url(../img/Background/bg3.jpg)">
+<body id="contact" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98" style="background-image: url(../img/Background/bg6.jpg)">
 
 	<!-- LOADER -->
 	<div id="preloader">

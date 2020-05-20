@@ -25,13 +25,15 @@ function query($query)
   return $rows;
 }
 
+
+// U P L O A D
 function upload()
 {
   $nama_file = $_FILES['gambar']['name'];
   $tipe_file = $_FILES['gambar']['type'];
   $ukuran_file = $_FILES['gambar']['size'];
   $error = $_FILES['gambar']['error'];
-  $tmp_name = $_FILES['gambar']['tmp_name'];
+  $tmp_file = $_FILES['gambar']['tmp_name'];
 
   // Ketika tidak ada gambar yg dipilih
   if ($error == 4) {
@@ -78,11 +80,13 @@ function upload()
   $nama_file_baru .= '.';
   $nama_file_baru .= $ekstensi_file;
 
-  move_uploaded_file($tmp_name, '../img/' . $nama_file_baru);
+  move_uploaded_file($tmp_file, '../img/' . $nama_file_baru);
 
   return $nama_file_baru;
 }
 
+
+// T A M B A H
 // fungsi untuk menambahkan data didalam database
 function tambah($data)
 {
@@ -105,7 +109,7 @@ function tambah($data)
   $query = "INSERT INTO 
                 pakaian
                 VALUES
-            (' ','$Gambar', '$Kode', '$Nama', '$Harga', '$Warna', '$Ukuran', '$Material')
+            ('null','$Gambar', '$Kode', '$Nama', '$Harga', '$Warna', '$Ukuran', '$Material')
                 ";
 
   mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -113,7 +117,7 @@ function tambah($data)
 }
 
 
-// HAPUS
+// H A P U S
 function hapus($Id)
 {
   $conn = koneksi();
@@ -129,7 +133,7 @@ function hapus($Id)
 }
 
 
-// UBAH
+// U B A H
 function ubah($data)
 {
   $conn = koneksi();
@@ -168,6 +172,7 @@ function ubah($data)
 }
 
 
+// C A R I
 function cari($keyword)
 {
   $conn = koneksi();
@@ -219,6 +224,7 @@ function login($data)
 }
 
 
+// R E G I S T R A S I
 function registrasi($data)
 {
   $conn = koneksi();

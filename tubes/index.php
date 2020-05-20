@@ -45,7 +45,7 @@ $pakaian = query("SELECT * FROM pakaian");
 
 </head>
 
-<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" class="scrollspy" style="background-image: url(img/Background/bg3.jpg)">
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" class="scrollspy" style="background-image: url(img/Background/bg6.jpg)">
 
   <!-- LOADER -->
   <div id="preloader">

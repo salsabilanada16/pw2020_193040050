@@ -51,7 +51,7 @@ if (isset($_POST['cari'])) {
 
 </head>
 
-<body id="services" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98" style="background-image: url(../img/Background/bg3.jpg)">
+<body id="services" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98" style="background-image: url(../img/Background/bg6.jpg)">
 
     <!-- LOADER -->
     <div id="preloader">
