@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 18, 2020 at 01:55 AM
+-- Generation Time: May 20, 2020 at 04:26 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -63,7 +63,10 @@ INSERT INTO `pakaian` (`Id`, `Gambar`, `Kode`, `Nama`, `Harga`, `Warna`, `Ukuran
 (18, 'gambar18.jpg', 'A18', 'HOLLISTER\r\nLarge Scale Logo Pullover Hoodie', 'Rp 939.000', 'Navy, Pink, Grey, Red', 'XS, S, M, L', '70% Cotton, 30% Polyester'),
 (19, 'gambar19.jpg', 'A19', 'PAPER DOLLS\r\nMono Colourblock Dress', 'Rp 1.329.000', 'Mond Print Black', '8, 10, 12, 14, 16', '89% Polyester, 11% Elastane'),
 (20, 'gambar20.jpg', 'A20', 'CLOSET\r\nA-line Wrap Dress\r\n', 'Rp 1.649.000', 'Red', '8, 10, 12, 14, 16', '90% Polyester, 10% Elastane'),
-(21, 'gambar21.jpg', 'A21', 'SPORT B.\r\nReversible Down Jacket', 'Rp 8.489.000', 'Black', '1, 2, 3, 4', '100% Nylon');
+(21, 'gambar21.jpg', 'A21', 'SPORT B.\r\nReversible Down Jacket', 'Rp 8.489.000', 'Black', '1, 2, 3, 4', '100% Nylon'),
+(24, '5ec1d99db46dd.jpg', 'af', 'afs', 'afsas', 'fs', 'fsa', 'fsad'),
+(25, '5ec526712e586.jpg', 'adfads', 'afsfsa', 'sfa', 'gt', 'hrst', 'gds'),
+(26, '5ec52971bf24a.jpg', 'svga', 'fdas', 'fdaafd', 'fsdafad', 'dfsa', 'fasd');
 
 --
 -- Indexes for dumped tables
@@ -83,7 +86,7 @@ ALTER TABLE `pakaian`
 -- AUTO_INCREMENT for table `pakaian`
 --
 ALTER TABLE `pakaian`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
