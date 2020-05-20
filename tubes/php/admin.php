@@ -273,7 +273,7 @@ if (isset($_POST['cari'])) {
                                 <div class="col-sm-6 col-md-4">
                                     <div class="service_blog">
                                         <div class="service_icons">
-                                            <img src="../img/<?= $pkn["Gambar"]; ?>" style="display: block; margin-left: auto; margin-right: auto;">
+                                            <img src="../img/<?= $pkn["Gambar"]; ?>" style="display: block; margin-left: auto; margin-right: auto; height: 350px; width: 240px;">
                                         </div>
                                         <div class="full">
                                             <h4 style="text-align: center"><?= $pkn["Nama"] ?></h4>

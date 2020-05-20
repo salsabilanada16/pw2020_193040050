@@ -65,8 +65,8 @@ function upload()
   }
 
   // Cek ukuran file
-  // Maksimal 5Mb == 5000000 byte
-  if ($ukuran_file > 5000000) {
+  // Maksimal 1Mb == 1000000 byte
+  if ($ukuran_file > 1000000) {
     echo "<script>
             alert('File size too large!');
           </script>";
@@ -109,7 +109,7 @@ function tambah($data)
   $query = "INSERT INTO 
                 pakaian
                 VALUES
-            ('null','$Gambar', '$Kode', '$Nama', '$Harga', '$Warna', '$Ukuran', '$Material')
+            (null,'$Gambar', '$Kode', '$Nama', '$Harga', '$Warna', '$Ukuran', '$Material')
                 ";
 
   mysqli_query($conn, $query) or die(mysqli_error($conn));
@@ -123,7 +123,7 @@ function hapus($Id)
   $conn = koneksi();
 
   // Menghapus gambar di folder img
-  $pkn = query("SELECT * FROM pakaian WHERE Id = $Id");
+  $pkn = query("SELECT * FROM pakaian WHERE Id = $Id")[0];
   if ($pkn['Gambar'] != 'nophoto.png') {
     unlink('../img/' . $pkn['Gambar']);
   }

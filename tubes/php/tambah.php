@@ -129,7 +129,7 @@ if (isset($_POST['tambah'])) {
                 <div class="col-lg-12 col-sm-7 col-xs-12 margin-top_30">
                     <div class="contact-block">
                         <form action="" method="POST" enctype="multipart/form-data">
-                            <form id="contactForm" enctype="multipart/form-data">
+                            <form id="contactForm">
                                 <input type="hidden" name="Id" id="Id" value="<?= $pkn['Id']; ?>">
                                 <div class="row">
                                     <div class="col-md-12">
