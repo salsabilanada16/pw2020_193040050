@@ -2,6 +2,7 @@
 // Mencegah file diakses sebelum melakukan login
 session_start();
 
+// Tidak bisa masuk ke halaman manapun sebelum login
 if (!isset($_SESSION["username"])) {
     header("Location: login.php");
     exit;
@@ -24,12 +25,12 @@ $Id = $_GET['Id'];
 
 if (hapus($Id) > 0) {
     echo "<script>
-            alert('Data Berhasil Dihapus!);
+            alert('Data Successfully Deleted!');
             document.location.href = 'admin.php';
         </script>";
 } else {
     echo "<script>
-            alert('Data Gagal Dihapus!');
+            alert('Data Failed to Delete!');
             document.location.href = 'admin.php';
         </script>";
 }

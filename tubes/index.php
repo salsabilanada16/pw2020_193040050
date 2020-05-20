@@ -2,269 +2,455 @@
 require 'php/functions.php';
 
 $pakaian = query("SELECT * FROM pakaian");
-
-
-// Ketika tombol cari diklik
-if (isset($_POST['cari'])) {
-    $pakaian = cari($_POST['keyword']);
-}
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<!-- Basic -->
 
 <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Site Metas -->
+  <title>Radz Project.</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <!-- Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="#" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- Pogo Slider CSS -->
+  <link rel="stylesheet" href="css/pogo-slider.min.css" />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="css/responsive.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/Logo/logo1.png">
 
-    <meta charset="UTF-8">
-    <title>Radz Project</title>
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
-    <link rel="stylesheet" href="css/index.css">
 </head>
 
-<body id="home" class="scrollspy">
-    <!-- Navbar -->
-    <div id="#home"></div>
-    <header class="open">
-        <div class="navbar-fixed">
-            <nav>
-                <div class="nav-wrapper white">
-                    <a href="#home" class="brand-logo center"><img src="assets/img/logo/1.png"></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li>
-                            <form action="" method="POST">
-                                <input type="text" name="keyword" class="keyword" autofocus autocomplete="off">
-                                <button type="submit" name="cari" class="pink-effect pink lighten-4 tombol-cari">Search</button>
-                            </form>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+<body id="home" data-spy="scroll" data-target="#navbar-wd" data-offset="98" class="scrollspy" style="background-image: url(img/Background/bg3.jpg)">
+
+  <!-- LOADER -->
+  <div id="preloader">
+    <div class="loader">
+      <img src="img/Tools/loader.gif" alt="#" />
+    </div>
+  </div>
+  <!-- end loader -->
+  <!-- END LOADER -->
+
+  <!-- Start header -->
+  <header class="top-header">
+    <nav class="navbar header-nav navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.php"><img src="img/Logo/logo1.png" alt="image" style="width: 50%;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <h1><span style="font-size: 250%; color: #e6005c;" class="navbar-brand">RADZ</span>PROJECT</h1>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+          <ul class="navbar-nav">
+            <li><a class="nav-link active" href="php/login.php" style="background: white;">My Account</a></li>
+            <li><a class="nav-link active" href="php/elements.php" style="background: white;">Let's Started</a></li>
+          </ul>
         </div>
-    </header>
-    </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End header -->
 
-    <section id="nav">
-        <nav class="pink lighten-4">
-            <div class="nav-wrapper">
-                <ul class="hide-on-med-and-down">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#shop">Shop +</a></li>
-                    <li><a href="">Category</a></li>
-                    <li><a href="#wanted">Most Wanted</a></li>
-                    <li><a href="#newarrival">New Arrival</a></li>
-                    <li class="li"><a href="php/login.php">Login</a></li>
-                </ul>
+  <!-- Start Banner -->
+  <div class="ulockd-home-slider">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="pogoSlider" id="js-main-slider">
+          <div class="pogoSlider-slide" style="background-image:url(img/Banner/banner06.png); background-size: cover;">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="slide_text">
+                    <h3>WELCOME! WANT TO LOOK PREETY? </h3>
+                    <br>
+                    <h4><span class="theme_color">KLIK THE BUTTON BELOW</span></h4>
+                    <br>
+                    <a class="contact_bt" href="php/elements.php">Let's Started</a>
+                  </div>
+                </div>
+              </div>
             </div>
-        </nav>
-
-        <ul class="sidenav pink lighten-4" id="mobile-demo">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#shop">Shop +</a></li>
-            <li><a href="">Category</a></li>
-            <li><a href="#wanted">Most Wanted</a></li>
-            <li><a href="#newarrival">New Arrival</a></li>
-            <li><a href="php/login.php">Login</a></li>
-        </ul>
-    </section>
-    <!-- Akhir Navbar -->
-
-
-    <!-- slider -->
-    <div class="slider">
-        <ul class="slides">
-            <li>
-                <img src="assets/img/slider/1.jpg"> <!-- random image -->
-            </li>
-            <li>
-                <img src="assets/img/slider/2.jpg"> <!-- random image -->
-            </li>
-            <li>
-                <img src="assets/img/slider/3.jpeg"> <!-- random image -->
-            </li>
-            <li>
-                <img src="assets/img/slider/4.jpg"> <!-- random image -->
-            </li>
-            <li>
-                <img src="assets/img/slider/5.jpg"> <!-- random image -->
-            </li>
-            <li>
-                <img src="assets/img/slider/6.jpg"> <!-- random image -->
-            </li>
-        </ul>
+          </div>
+          <div class="pogoSlider-slide" style="background-image:url(img/Banner/banner08.png);">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="slide_text">
+                    <h3 style="color: white;">WELCOME! WANT TO LOOK PREETY?</h3>
+                    <br>
+                    <h4><span class="theme_color">KLIK THE BUTTON BELOW</span></h4>
+                    <br>
+                    <a class="contact_bt" href="php/elements.php">Let's Started</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- .pogoSlider -->
+      </div>
     </div>
-    <!-- Akhir Slider -->
+  </div>
+  <!-- End Banner -->
 
+  <!-- About -->
+  <section id="about">
+    <!-- end section -->
 
-    <!-- Cards -->
-    <div class="container">
-        <section id="shop">
-            <div class="row">
-                <?php if (empty($pakaian)) : ?>
-                    <tr>
-                        <td>
-                            <h1>Data Not Found. Try Again!</h1>
-                        </td>
-                        <td><a href="index.php" class="btn pink-effect pink lighten-4" style="margin-left: 500px;">Back</a></td>
-                    </tr>
-                <?php else : ?>
-                    <?php foreach ($pakaian as $pkn) : ?>
-                        <div class="col s12 m4">
-                            <div class="card z-depth-3">
-                                <div class="card-image">
-                                    <img src="assets/img/<?= $pkn["Gambar"]; ?>" class="responsive-img materialboxed">
-                                    <span class="card-title pink-text text-lighten-2"><b><?= $pkn["Nama"] ?></b></span>
-                                </div>
+    <div class="section dark_bg">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-2 col-md-6 text_align_center margin_0">
+            <div class="full">
+              <img class="img-responsive" src="img/More/img1.jpg" alt="#" width="50%">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6 text_align_center padding_0">
+            <div class="full">
+              <img class="img-responsive" src="img/More/img2.jpg" alt="#" width="50%">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-1 text_align_center padding_0">
+            <div class="full">
+              <img class="img-responsive" src="img/More/img3.jpg" alt="#" width="50%">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-1 text_align_center padding_0">
+            <div class="full">
+              <img class="img-responsive" src="img/More/img4.jpg" alt="#" width="50%">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-1 text_align_center padding_0">
+            <div class="full">
+              <img class="img-responsive" src="img/More/img5.jpg" alt="#" width="50%">
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-1 text_align_center padding_10">
+            <div class="full">
+              <img class="img-responsive" src="img/More/img6.jpg" alt="#" width="50%">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About -->
 
-                                <div class="card-content">
-                                    <p class="nama">
-                                        <a href="php/detail.php?Id=<?= $pkn['Id'] ?>">
-                                            <span class="pink-text text-darken-3">
-                                                <?= $pkn["Kode"] ?><br>
-                                                <?= $pkn["Harga"] ?><br>
-                                                <?= $pkn["Warna"] ?><br>
-                                                <?= $pkn["Ukuran"] ?><br>
-                                                <?= $pkn["Material"] ?><br>
-                                            </span>
-                                        </a>
-                                    </p>
-                                </div>
-                            </div>
+  <!-- Limited -->
+  <section id="limited">
+    <div class="section layout_padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="full">
+              <div class="heading_main text_align_left">
+                <div class="left">
+                  <p class="section_count"> </p>
+                </div>
+                <div class="right">
+                  <p class="small_tag">Grab it Fast!</p>
+                  <h2>OUR<span class="theme_color"> COLLECTIONS.</span>
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row margin-top_30">
+          <div class="col-lg-12 margin-top_30">
+            <div id="team_slider" class="carousel slide" data-ride="carousel">
+
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                      <div class="full">
+                        <div class="full team_member_img text_align_center">
+                          <img src="img/Limited/gambar1.jpg" alt="#" />
+                          <div class="social_icon_team">
+                            <ul class="social_icon">
+                              <li>
+                                <h4>Rp 1.149.000</h4>
+                              </li>
+                            </ul>
+                          </div>
                         </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
-        </section>
-    </div>
-    <!-- Akhir Cards -->
-
-
-    <!-- New Arrival -->
-    <section id="newarrival1" class="newarrival white scrollspy">
-        <h3 class="light center grey-text text-darken-3"></h3>
-    </section>
-    <!-- Akhir New Arrival -->
-
-
-    <!-- Wanted -->
-    <div id="wanted" class="parallax-container scrollspy">
-        <div class="parallax"><img src="assets/img/parallax/6.jpg"></div>
-
-        <div class="wanted scrollspy">
-            <h3 class="center light black-text">Limited Edition!</h3>
-            <div class="row">
-                <div class="container">
-                    <div class="col m3 s12 center">
-                        <img src="assets/img/parallax/2.jpg" class="responsive-img materialboxed">
+                        <div class="full text_align_center">
+                          <h3>SHOES</h3>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col m3 s12 center">
-                        <img src="assets/img/parallax/3.jpg" class="responsive-img materialboxed">
+
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                      <div class="full">
+                        <div class="full team_member_img text_align_center">
+                          <img src="img/Limited/gambar7.jpg" alt="#" />
+                          <div class="social_icon_team">
+                            <ul class="social_icon">
+                              <li>
+                                <h4>Rp 2.269.000</h4>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="full text_align_center">
+                          <h3>CLOTHES</h3>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col m3 s12 center">
-                        <img src="assets/img/parallax/4.jpg" class="responsive-img materialboxed">
+
+                    <div class="col-lg-4 col-md-4 col-sm-12">
+                      <div class="full">
+                        <div class="full team_member_img text_align_center">
+                          <img src="img/Limited/gambar8.jpg" alt="#" />
+                          <div class="social_icon_team">
+                            <ul class="social_icon">
+                              <li>
+                                <h4>Rp 2.349.000</h4>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="full text_align_center">
+                          <h3>BAGS</h3>
+                        </div>
+                      </div>
                     </div>
-                    <div class="col m3 s12 center">
-                        <img src="assets/img/parallax/5.jpg" class="responsive-img materialboxed">
-                    </div>
+
+                  </div>
                 </div>
+              </div>
+              <div class="bullets">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#team_slider" data-slide-to="0" class="active"></li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    <!-- Akhir Wanted -->
+  </section>
+  <!-- End Limited -->
 
-
-    <!-- New Arrival -->
-    <section id="newarrival2" class="newarrival white scrollspy">
-        <h3 class="light center grey-text text-darken-3"></h3>
-    </section>
-    <!-- Akhir New Arrival -->
-
-
-    <!-- New Arrival -->
-    <section id="newarrival" class="newarrival transparent scrollspy">
-        <h3 class="light center grey-text text-darken-3">New Arrival</h3>
-        <div class="container">
-            <div class="row transparent">
-                <div class="col m4 s12">
-                    <div class="card-panel center">
-                        <img src="assets/img/Trending/gambar1.jpg" class="responsive-img materialboxed">
-                    </div>
-                </div>
-                <div class=" col m4 s12">
-                    <div class="card-panel center">
-                        <img src="assets/img/Trending/gambar2.jpg" class="responsive-img materialboxed">
-                    </div>
-                </div>
-                <div class="col m4 s12">
-                    <div class="card-panel center">
-                        <img src="assets/img/Trending/gambar3.jpg" class="responsive-img materialboxed">
-                    </div>
-                </div>
-            </div>
+  <!-- Start Footer -->
+  <footer class="footer-box">
+    <div class="container" style="height: 25%;">
+      <div class="row">
+        <div class="col-md-12 margin-bottom_30">
+          <img src="img/Logo/logo1.png" alt="#" width="10%;" style="margin-top: -40px;">
         </div>
-    </section>
-    <!-- Akhir New Arrival -->
-
-
-    <!-- Footer -->
-    <section id="footer">
-        <footer class="page-footer pink lighten-3">
-            <div class="footer-copyright">
-                <p class="flow-text white-text">© 2020 Radz Project.</p>
+        <div class="col-xl-8 white_fonts">
+          <div class="row">
+            <div class="col-md-12 white_fonts margin-bottom_20">
+              <h3>Contact Us</h3>
             </div>
-        </footer>
-    </section>
-    <!-- Akhir Footer -->
+            <div class="col-md-4">
+              <div class="full icon">
+                <img src="img/Tools/social1.png">
+              </div>
+              <div class="full white_fonts">
+                <p>United States
+                  <br>New York City</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="full icon">
+                <img src="img/Tools/social2.png">
+              </div>
+              <div class="full white_fonts">
+                <p>radzproject@gmail.com
+                  <br>sadzani16@gmail.com</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="full icon">
+                <img src="img/Tools/social3.png">
+              </div>
+              <div class="full white_fonts">
+                <p>+7586656566
+                  <br>+7586656566</p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <ul class="full social_icon margin-top_20">
+                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="css/js/materialize.min.js"></script>
-    <!-- Carousel -->
-    <script>
-        const sideNav = document.querySelectorAll('.sidenav');
-        M.Sidenav.init(sideNav);
+      </div>
 
-        const slider = document.querySelectorAll('.slider');
-        M.Slider.init(slider, {
-            indicators: false,
-            height: 500,
-            transition: 600,
-            interval: 3000
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="crp">© 2020 Radz Project. Salsabila Nada Adzani</p>
+          <ul class="bottom_menu">
+            <li><a href="#">Term of Service</a></li>
+            <li><a href="#">Privacy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+  <!-- ALL JS FILES -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- ALL PLUGINS -->
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.pogo-slider.min.js"></script>
+  <script src="js/slider-index.js"></script>
+  <script src="js/smoothscroll.js"></script>
+  <script src="js/form-validator.min.js"></script>
+  <script src="js/contact-form-script.js"></script>
+  <script src="js/isotope.min.js"></script>
+  <script src="js/images-loded.min.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    /* counter js */
+
+    (function($) {
+      $.fn.countTo = function(options) {
+        options = options || {};
+
+        return $(this).each(function() {
+          // set options for current element
+          var settings = $.extend({}, $.fn.countTo.defaults, {
+            from: $(this).data('from'),
+            to: $(this).data('to'),
+            speed: $(this).data('speed'),
+            refreshInterval: $(this).data('refresh-interval'),
+            decimals: $(this).data('decimals')
+          }, options);
+
+          // how many times to update the value, and how much to increment the value on each update
+          var loops = Math.ceil(settings.speed / settings.refreshInterval),
+            increment = (settings.to - settings.from) / loops;
+
+          // references & variables that will change with each update
+          var self = this,
+            $self = $(this),
+            loopCount = 0,
+            value = settings.from,
+            data = $self.data('countTo') || {};
+
+          $self.data('countTo', data);
+
+          // if an existing interval can be found, clear it first
+          if (data.interval) {
+            clearInterval(data.interval);
+          }
+          data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+          // initialize the element with the starting value
+          render(value);
+
+          function updateTimer() {
+            value += increment;
+            loopCount++;
+
+            render(value);
+
+            if (typeof(settings.onUpdate) == 'function') {
+              settings.onUpdate.call(self, value);
+            }
+
+            if (loopCount >= loops) {
+              // remove the interval
+              $self.removeData('countTo');
+              clearInterval(data.interval);
+              value = settings.to;
+
+              if (typeof(settings.onComplete) == 'function') {
+                settings.onComplete.call(self, value);
+              }
+            }
+          }
+
+          function render(value) {
+            var formattedValue = settings.formatter.call(self, value, settings);
+            $self.html(formattedValue);
+          }
         });
+      };
 
-        const parallax = document.querySelectorAll('.parallax');
-        M.Parallax.init(parallax);
+      $.fn.countTo.defaults = {
+        from: 0, // the number the element should start at
+        to: 0, // the number the element should end at
+        speed: 1000, // how long it should take to count between the target numbers
+        refreshInterval: 100, // how often the element should be updated
+        decimals: 0, // the number of decimal places to show
+        formatter: formatter, // handler for formatting the value before rendering
+        onUpdate: null, // callback method for every time the element is updated
+        onComplete: null // callback method for when the element finishes updating
+      };
 
-        const materialbox = document.querySelectorAll('.materialboxed');
-        M.Materialbox.init(materialbox);
+      function formatter(value, settings) {
+        return value.toFixed(settings.decimals);
+      }
+    }(jQuery));
 
-        const scroll = document.querySelectorAll('.scrollspy');
-        M.ScrollSpy.init(scroll, {
-            scrollOffset: 50
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('.sidenav').seidenav
-        })
+    jQuery(function($) {
+      // custom formatting example
+      $('.count-number').data('countToOptions', {
+        formatter: function(value, options) {
+          return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+        }
+      });
 
-        $(document).ready(function() {
-            $('.parallax').parallax();
-        });
-    </script>
-    <script src="css/js/index.js"></script>
+      // start all the timers
+      $('.timer').each(count);
+
+      function count(options) {
+        var $this = $(this);
+        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+        $this.countTo(options);
+      }
+    });
+  </script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>

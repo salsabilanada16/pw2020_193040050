@@ -33,6 +33,8 @@ if (isset($_POST['login'])) {
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
   <title>Login</title>
 
   <link rel="stylesheet" href="../css/login.css">
@@ -51,7 +53,7 @@ if (isset($_POST['login'])) {
     <!-- Title -->
 
     <!-- Log In -->
-    <section id="login" class="transparant scrollspy">
+    <section id="login" class="transparant scrollspy transparent scrollspy animate__animated animate__zoomIn">
       <div class="container">
 
         <div class="row">
@@ -61,7 +63,7 @@ if (isset($_POST['login'])) {
 
           <div class="col m8 s12">
             <form action="" method="POST">
-              <div class="card-panel">
+              <div class="card-panel" style="width: 100%;">
                 <h3>Log In</h3>
                 <?php if (isset($login['error'])) : ?>
                   <p>Username atau Password Salah</p>
@@ -84,7 +86,7 @@ if (isset($_POST['login'])) {
                   </label>
                 </div>
 
-                <button type="submit" name="login" class="btn pink lighten-3">Get Started</button>
+                <button type="submit" name="login" class="btn pink lighten-3" style="margin-left: 41%;">Get Started</button>
 
                 <div class="registrasi">
                   <p>Don't Have an Account? <a href="registrasi.php">Let's Sign Up</a></p>

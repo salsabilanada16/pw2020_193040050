@@ -85,6 +85,7 @@ function upload()
 }
 
 
+// TAMBAH
 function tambah($data)
 {
   $conn = koneksi();
@@ -111,6 +112,7 @@ function tambah($data)
 }
 
 
+// HAPUS
 function hapus($id)
 {
   $conn = koneksi();
@@ -126,6 +128,7 @@ function hapus($id)
 }
 
 
+// UBAH
 function ubah($data)
 {
   $conn = koneksi();

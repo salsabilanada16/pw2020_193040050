@@ -5,120 +5,383 @@ require 'functions.php';
 if (isset($_POST["register"])) {
   if (registrasi($_POST) > 0) {
     echo "<script>
-              alert('Registrasi Berhasil');
+              alert('Registration Successful!');
               document.location.href = 'login.php';
           </script>";
   } else {
     echo "<script>
-              alert('Registrasi Gagal');
+              alert('Registration Failed!');
           </script>";
   }
 }
-
 ?>
 
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
 
 <head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-  <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Lobster&family=Pacifico&family=Pacifico&Playfair+Display:ital@1&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../css/registrasi.css">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Site Metas -->
   <title>Radz Project - Sign Up</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Site Icons -->
+  <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="#" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../css/bootstrap.min.css" />
+  <!-- Pogo Slider CSS -->
+  <link rel="stylesheet" href="../css/pogo-slider.min.css" />
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <!-- Responsive CSS -->
+  <link rel="stylesheet" href="../css/responsive.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../css/custom.css" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../img/Logo/logo1.png">
+
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
 
-<body>
-  <!-- Title -->
-  <section id="title">
-    <div class="container">
-      <img src="../assets/img/logo/1.png" alt="">
-      <h2>WELCOME!</h2><br>
-      <h5>ADMIN</h5>
+<body id="contact" class="inner_page" data-spy="scroll" data-target="#navbar-wd" data-offset="98" style="background-image: url(../img/Background/bg3.jpg)">
+
+  <!-- LOADER -->
+  <div id="preloader">
+    <div class="loader">
+      <img src="../img/Tools/loader.gif" alt="#" />
     </div>
-  </section>
-  <!-- Title -->
+  </div>
+  <!-- end loader -->
+  <!-- END LOADER -->
 
-  <!-- Log In -->
-  <section id="login" class="transparent scrollspy">
-    <div class="container">
-      <h3 class="light grey-text text-darken-3"></h3>
-      <div class="row">
-        <div class="col m2 s12">
-
+  <!-- Start header -->
+  <header class="top-header">
+    <nav class="navbar header-nav navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="registrasi.php"><img src="../img/Logo/logo1.png" alt="image" style="width: 50%;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <h1><span style="font-size: 250%; color: #e6005c;" class="navbar-brand">RADZ</span>PROJECT</h1>
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+          <ul class="navbar-nav">
+            <li><a class="nav-link active" href="elements.php">Home</a></li>
+          </ul>
         </div>
+      </div>
+    </nav>
+  </header>
+  <!-- End header -->
 
-        <div class="col m8 s12">
-          <form action="" method="POST">
-            <div class="card-panel">
-              <h3>Sign Up</h3>
-
-              <div class="input-field">
-                <input type="text" name="username" id="username" required class="validate" autofocus>
-                <label for="username">Username :</label>
-              </div>
-              <div class="input-field">
-                <input type="password" name="password1" id="password1" required class="validate">
-                <label for="password">Password :</label>
-              </div>
-              <div class="input-field">
-                <input type="password" name="password2" id="password2" required>
-                <label for="password">Confirm Password :</label>
-              </div>
-
-              <button type="submit" name="register" class="btn pink lighten-3">Join!</button>
-
-              <div class="registrasi">
-                <p>You have an account already? <a href="login.php">Log in here</a></p>
-              </div>
-            </div>
-          </form>
+  <!-- Start Banner -->
+  <div class="section inner_page_header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="full">
+            <h3 style="margin: -15px 0;">Sign Up</h3>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-  <!-- Akhir Log In -->
+  </div>
+  <!-- end Banner -->
+
+  <!-- Login -->
+  <div class="section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="full">
+            <div class="heading_main text_align_left">
+              <div class="right">
+                <p class="small_tag">HELLO!</p>
+                <h2><span class="theme_color">W E L C O M E</span>, WANNA JOIN?</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row margin-top_30">
+
+        <div class="col-lg-7 col-sm-7 col-xs-12 margin-top_30">
+          <div class="contact-block">
+            <form action="" method="POST">
+              <form id="contactForm">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="username">Username</label>
+                      <input type="text" class="form-control" id="username" name="username" placeholder="Your Username" required data-error="Please enter your username" class="validate" autofocus autocomplete="off" style="color: white;">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" id="password1" name="password1" placeholder="Your Password" required data-error="Please enter your password" style="color: white;">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="form-group">
+                      <label for="password">Confirm Password</label>
+                      <input type="password" class="form-control" id="password2" name="password2" placeholder="Your Password Again" required data-error="Please enter your password again" style="color: white;">
+                      <div class="help-block with-errors"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-12">
+                    <div class="submit-button text-center">
+                      <button class="btn btn-common" type="submit" name="register">Join!</button>
+                      <div id="msgSubmit" class="h3 text-center hidden"></div>
+                      <div class="clearfix"></div>
+                    </div>
+                    <div class="registrasi">
+                      <p style="text-align: center;">You have an account already? <a href="login.php" style="color: palevioletred;">Login here</a></p>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </form>
+          </div>
+        </div>
 
 
-  <!-- The JavaScript -->
-  <script type="text/javascript" src="../css/js/materialize.min.js"></script>
+        <div class="col-lg-5 col-sm-5 col-md-4 col-xs-12 margin-top_30">
+          <div class="left-contact">
+            <div class="media cont-line">
+              <div class="media-left icon-b">
+                <i class="fa fa-location-arrow" aria-hidden="true"></i>
+              </div>
+              <div class="media-body dit-right">
+                <h4>Address</h4>
+                <p>432 Park Avenue Condominiums. New York City</p>
+              </div>
+            </div>
+            <div class="media cont-line">
+              <div class="media-left icon-b">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </div>
+              <div class="media-body dit-right">
+                <h4>Email</h4>
+                <a href="#">radzproject@gmail.com</a><br>
+                <a href="#">sadzani16@gmail.com</a>
+              </div>
+            </div>
+            <div class="media cont-line">
+              <div class="media-left icon-b">
+                <i class="fa fa-volume-control-phone" aria-hidden="true"></i>
+              </div>
+              <div class="media-body dit-right">
+                <h4>Phone Number</h4>
+                <a href="#">12345 67890</a><br>
+                <a href="#">12345 67890</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <!-- end section -->
+
+
+  <!-- Start Footer -->
+  <footer class="footer-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-6 white_fonts">
+          <div class="row">
+            <div class="col-md-12 white_fonts margin-bottom_30">
+              <h3>Contact Us</h3>
+            </div>
+            <div class="col-md-4">
+              <div class="full icon">
+                <img src="../img/Tools/social1.png">
+              </div>
+              <div class="full white_fonts">
+                <p>United States
+                  <br>New York City</p>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="full icon">
+                <img src="../img/Tools/social2.png">
+              </div>
+              <div class="full white_fonts">
+                <p>radzproject@gmail.com
+                  <br>sadzani16@gmail.com</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="full icon">
+                <img src="../img/Tools/social3.png">
+              </div>
+              <div class="full white_fonts">
+                <p>+7586656566
+                  <br>+7586656566</p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <ul class="full social_icon margin-top_20">
+                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <div class="footer_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <p class="crp">© 2020 Radz Project. Salsabila Nada Adzani</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a href="#" id="scroll-to-top" class="hvr-radial-out"><i class="fa fa-angle-up"></i></a>
+
+  <!-- ALL JS FILES -->
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/popper.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <!-- ALL PLUGINS -->
+  <script src="../js/jquery.magnific-popup.min.js"></script>
+  <script src="../js/jquery.pogo-slider.min.js"></script>
+  <script src="../js/slider-index.js"></script>
+  <script src="../js/smoothscroll.js"></script>
+  <script src="../js/form-validator.min.js"></script>
+  <script src="../js/contact-form-script.js"></script>
+  <script src="../js/isotope.min.js"></script>
+  <script src="../js/images-loded.min.js"></script>
+  <script src="../js/custom.js"></script>
   <script>
-    const sideNav = document.querySelectorAll('.sidenav');
-    M.Sidenav.init(sideNav);
+    /* counter js */
 
-    const slider = document.querySelectorAll('.slider');
-    M.Slider.init(slider, {
-      indicators: false,
-      height: 500,
-      transition: 600,
-      interval: 3000
-    });
+    (function($) {
+      $.fn.countTo = function(options) {
+        options = options || {};
 
-    const parallax = document.querySelectorAll('.parallax');
-    M.Parallax.init(parallax);
+        return $(this).each(function() {
+          // set options for current element
+          var settings = $.extend({}, $.fn.countTo.defaults, {
+            from: $(this).data('from'),
+            to: $(this).data('to'),
+            speed: $(this).data('speed'),
+            refreshInterval: $(this).data('refresh-interval'),
+            decimals: $(this).data('decimals')
+          }, options);
 
-    const materialbox = document.querySelectorAll('.materialboxed');
-    M.Materialbox.init(materialbox);
+          // how many times to update the value, and how much to increment the value on each update
+          var loops = Math.ceil(settings.speed / settings.refreshInterval),
+            increment = (settings.to - settings.from) / loops;
 
-    const scroll = document.querySelectorAll('.scrollspy');
-    M.ScrollSpy.init(scroll, {
-      scrollOffset: 50
+          // references & variables that will change with each update
+          var self = this,
+            $self = $(this),
+            loopCount = 0,
+            value = settings.from,
+            data = $self.data('countTo') || {};
+
+          $self.data('countTo', data);
+
+          // if an existing interval can be found, clear it first
+          if (data.interval) {
+            clearInterval(data.interval);
+          }
+          data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+          // initialize the element with the starting value
+          render(value);
+
+          function updateTimer() {
+            value += increment;
+            loopCount++;
+
+            render(value);
+
+            if (typeof(settings.onUpdate) == 'function') {
+              settings.onUpdate.call(self, value);
+            }
+
+            if (loopCount >= loops) {
+              // remove the interval
+              $self.removeData('countTo');
+              clearInterval(data.interval);
+              value = settings.to;
+
+              if (typeof(settings.onComplete) == 'function') {
+                settings.onComplete.call(self, value);
+              }
+            }
+          }
+
+          function render(value) {
+            var formattedValue = settings.formatter.call(self, value, settings);
+            $self.html(formattedValue);
+          }
+        });
+      };
+
+      $.fn.countTo.defaults = {
+        from: 0, // the number the element should start at
+        to: 0, // the number the element should end at
+        speed: 1000, // how long it should take to count between the target numbers
+        refreshInterval: 100, // how often the element should be updated
+        decimals: 0, // the number of decimal places to show
+        formatter: formatter, // handler for formatting the value before rendering
+        onUpdate: null, // callback method for every time the element is updated
+        onComplete: null // callback method for when the element finishes updating
+      };
+
+      function formatter(value, settings) {
+        return value.toFixed(settings.decimals);
+      }
+    }(jQuery));
+
+    jQuery(function($) {
+      // custom formatting example
+      $('.count-number').data('countToOptions', {
+        formatter: function(value, options) {
+          return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+        }
+      });
+
+      // start all the timers
+      $('.timer').each(count);
+
+      function count(options) {
+        var $this = $(this);
+        options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+        $this.countTo(options);
+      }
     });
   </script>
 </body>

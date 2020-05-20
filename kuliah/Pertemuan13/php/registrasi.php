@@ -34,6 +34,7 @@ if (isset($_POST['registrasi'])) {
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
   <title>Registration</title>
 
   <link rel="stylesheet" href="../css/registrasi.css">
@@ -50,7 +51,7 @@ if (isset($_POST['registrasi'])) {
   <!-- Title -->
 
   <!-- Log In -->
-  <section id="login" class="transparent scrollspy">
+  <section id="login" class="transparent scrollspy transparent scrollspy animate__animated animate__zoomIn">
     <div class="container">
       <h3 class="light grey-text text-darken-3"></h3>
       <div class="row">
@@ -60,7 +61,7 @@ if (isset($_POST['registrasi'])) {
 
         <div class="col m8 s12">
           <form action="" method="POST">
-            <div class="card-panel">
+            <div class="card-panel" style="width: 100%;">
               <h3>Sign Up</h3>
 
               <div class="input-field">

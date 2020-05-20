@@ -66,6 +66,7 @@ if (isset($_POST['ubah'])) {
 
     #title h3 {
       color: white;
+      font-family: 'Kaushan Script', cursive;
     }
 
     #ubah {
@@ -104,6 +105,7 @@ if (isset($_POST['ubah'])) {
 
     #ubah .back {
       margin-left: 20px;
+      margin-bottom: 20px;
     }
   </style>
 </head>
@@ -156,7 +158,7 @@ if (isset($_POST['ubah'])) {
             </div>
         </div>
         <button class="btn waves-effect grey darken-3 z-depth-2" type="submit" name="tambah">Change Data!</button>
-        <button class="btn waves-effect grey darken-3 z-depth-2 back" type="submit" href="../index.php">Back</button>
+        <a href="../index.php" class="btn waves-effect grey darken-3 z-depth-2 back" type="submit">Back</a>
         </form>
       </section>
     </div>
